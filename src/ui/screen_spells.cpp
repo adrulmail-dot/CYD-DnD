@@ -208,7 +208,7 @@ static void buildCatalogTab(lv_obj_t *tab) {
         for (size_t idx : matches) {
             if (shown++ >= MAX_SPELL_RESULTS) break;
             const SpellIndexEntry &s = App.spells.at(idx);
-            String label = s.name + " (ур." + String(s.lvl) + ", " + s.school + ")";
+            String label = s.name + " (ур." + String(s.level) + ", " + s.school + ")";
             lv_obj_t *btn = lv_list_add_btn(ctx.list, nullptr, label.c_str());
             auto *slugCopy = new String(s.slug);
             lv_obj_add_event_cb(btn, [](lv_event_t *e) {
