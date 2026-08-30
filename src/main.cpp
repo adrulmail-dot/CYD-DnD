@@ -5,6 +5,7 @@
 #include <lvgl.h>
 
 #include "pins.h"
+#include "version.h"
 #include "app_state.h"
 #include "ui/ui_style.h"
 #include "ui/screen_home.h"
@@ -126,6 +127,7 @@ static bool initSd() {
 
 void setup() {
     Serial.begin(115200);
+    Serial.println("CYD D&D Bestiary & Spell Tracker v" APP_VERSION);
     initDisplayAndTouch();
 
     if (!initSd()) {

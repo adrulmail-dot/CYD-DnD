@@ -1,6 +1,7 @@
 #include "screen_home.h"
 #include "ui_style.h"
 #include "../app_state.h"
+#include "version.h"
 
 lv_obj_t *screen_home_create() {
     lv_obj_t *scr = lv_obj_create(NULL);
@@ -48,6 +49,12 @@ lv_obj_t *screen_home_create() {
         lv_obj_center(lbl);
         lv_obj_set_style_text_font(lbl, &lv_font_montserrat_16, 0);
     }
+
+    lv_obj_t *version = lv_label_create(scr);
+    lv_label_set_text(version, "v" APP_VERSION);
+    lv_obj_set_style_text_color(version, lv_palette_darken(LV_PALETTE_GREY, 1), 0);
+    lv_obj_set_style_text_font(version, &lv_font_montserrat_12, 0);
+    lv_obj_align(version, LV_ALIGN_BOTTOM_MID, 0, -4);
 
     return scr;
 }
