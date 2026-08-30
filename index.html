@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CYD D&amp;D — установка прошивки</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #222;
+    background: #fafafa;
+  }
+  h1 { font-size: 1.4rem; }
+  ol { line-height: 1.7; }
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  esp-web-install-button button {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    cursor: pointer;
+  }
+  .note {
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+  <h1>CYD D&amp;D — Бестиарий и трекер заклинаний</h1>
+  <p>Прошивка для платы <strong>CYD ESP32-2432S028</strong>. Работает прямо из
+  браузера (Chrome или Edge на компьютере) через Web Serial — ничего
+  устанавливать не нужно.</p>
+
+  <ol>
+    <li>Подключите плату к компьютеру по USB (micro-USB или USB-C — любой из
+      двух портов на плате).</li>
+    <li>Нажмите кнопку ниже и выберите появившийся COM-порт платы.</li>
+    <li>Дождитесь окончания прошивки (обычно 30–60 секунд).</li>
+    <li>Не забудьте отдельно скопировать игровые данные на microSD карту —
+      см. раздел «Данные на microSD» в README репозитория.</li>
+  </ol>
+
+  <div class="card">
+    <esp-web-install-button manifest="./manifest.json">
+      <button slot="activate">Установить прошивку</button>
+      <span slot="unsupported">
+        Ваш браузер не поддерживает Web Serial API. Откройте эту страницу в
+        Chrome или Edge на компьютере (мобильные браузеры не подходят).
+      </span>
+      <span slot="not-allowed">
+        Страница должна быть открыта по HTTPS — обычно так и есть на GitHub
+        Pages, попробуйте обновить страницу.
+      </span>
+    </esp-web-install-button>
+  </div>
+
+  <p class="note">
+    Прошивка собирается автоматически из исходников репозитория через
+    GitHub Actions при каждом обновлении кода — эта страница всегда
+    указывает на последнюю собранную версию.
+  </p>
+</body>
+</html>
