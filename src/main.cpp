@@ -12,12 +12,21 @@
 static TFT_eSPI tft = TFT_eSPI();
 static SPIClass sdSPI(HSPI);
 
-static const uint16_t SCREEN_W = 240;
-static const uint16_t SCREEN_H = 320;
+// This exact board's ILI9341 panel renders garbled/transposed content at
+// TFT_eSPI's default portrait rotation (0) - a known clone-hardware quirk
+// where the glass is bonded 90 degrees off from the controller's assumed
+// orientation. Rotation 1 (which TFT_eSPI treats as landscape, 320x240)
+// gives a clean, non-garbled raw image on this unit; LVGL's software
+// rotation (see dispDrv.rotated below) then turns that clean landscape
+// buffer back into the portrait UI the app is built for, with
+// touchRead() doing the matching coordinate conversion.
+// PHYS_* = the raw panel's own coordinate space after setRotation(1).
+static const uint16_t PHYS_W = 320;
+static const uint16_t PHYS_H = 240;
 
 static lv_disp_draw_buf_t drawBuf;
-static lv_color_t buf1[SCREEN_W * 30];
-static lv_color_t buf2[SCREEN_W * 30];
+static lv_color_t buf1[PHYS_W * 30];
+static lv_color_t buf2[PHYS_W * 30];
 
 static void dispFlush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_p) {
     uint32_t w = area->x2 - area->x1 + 1;
@@ -32,12 +41,23 @@ static void dispFlush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *col
 }
 
 static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
-    uint16_t x, y;
-    bool touched = tft.getTouch(&x, &y);
+    uint16_t px, py;
+    bool touched = tft.getTouch(&px, &py);
     if (touched) {
+        // tft.getTouch() reports coordinates in the raw PHYS_W x PHYS_H
+        // panel space (see rotation comment above). LVGL's sw_rotate only
+        // transforms what gets drawn, not touch input, so the inverse of
+        // that same 90-degree rotation has to be applied here by hand -
+        // derived from LVGL's own draw_buf_rotate_90() so it matches
+        // dispDrv.rotated = LV_DISP_ROT_90 exactly.
+        // If the UI turns out upside-down/mirrored once this is on real
+        // hardware, switch dispDrv.rotated to LV_DISP_ROT_270 below and
+        // use this formula here instead:
+        //   data->point.x = py;
+        //   data->point.y = (PHYS_W - 1) - px;
         data->state = LV_INDEV_STATE_PR;
-        data->point.x = x;
-        data->point.y = y;
+        data->point.x = (PHYS_H - 1) - py;
+        data->point.y = px;
     } else {
         data->state = LV_INDEV_STATE_REL;
     }
@@ -45,7 +65,9 @@ static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
 
 static void initDisplayAndTouch() {
     tft.init();
-    tft.setRotation(0); // portrait, 240x320 - matches the CYD's default orientation
+    tft.setRotation(1); // landscape, 320x240. If the image still looks
+                         // rotated/mirrored on your unit, try 3 here instead
+                         // (0 and 2 are the two portrait options).
     pinMode(CYD_TFT_BL, OUTPUT);
     digitalWrite(CYD_TFT_BL, HIGH);
 
@@ -57,14 +79,18 @@ static void initDisplayAndTouch() {
     tft.setTouch(calData);
 
     lv_init();
-    lv_disp_draw_buf_init(&drawBuf, buf1, buf2, SCREEN_W * 30);
+    lv_disp_draw_buf_init(&drawBuf, buf1, buf2, PHYS_W * 30);
 
     static lv_disp_drv_t dispDrv;
     lv_disp_drv_init(&dispDrv);
-    dispDrv.hor_res = SCREEN_W;
-    dispDrv.ver_res = SCREEN_H;
+    dispDrv.hor_res = PHYS_W;   // raw panel resolution - LVGL derives the
+    dispDrv.ver_res = PHYS_H;   // logical 240x320 portrait size from this
+                                // plus `rotated` below (lv_disp_get_hor_res()
+                                // / get_ver_res() swap them for ROT_90/270).
     dispDrv.flush_cb = dispFlush;
     dispDrv.draw_buf = &drawBuf;
+    dispDrv.sw_rotate = 1;
+    dispDrv.rotated = LV_DISP_ROT_90;
     lv_disp_drv_register(&dispDrv);
 
     static lv_indev_drv_t indevDrv;
@@ -75,8 +101,27 @@ static void initDisplayAndTouch() {
 }
 
 static bool initSd() {
+    // Strategy 1: SD card on its own SPI bus (HSPI) - the most commonly
+    // published wiring for this board (SCK=18, MISO=19, MOSI=23, CS=5).
     sdSPI.begin(CYD_SD_SCK, CYD_SD_MISO, CYD_SD_MOSI, CYD_SD_CS);
-    return SD.begin(CYD_SD_CS, sdSPI);
+    if (SD.begin(CYD_SD_CS, sdSPI)) {
+        Serial.println("microSD mounted on dedicated HSPI bus (18/19/23, CS=5).");
+        return true;
+    }
+    SD.end();
+
+    // Strategy 2: some CYD board revisions instead wire the SD card onto
+    // the *same* SPI bus as the TFT/touch (VSPI: 12/13/14), differing only
+    // by chip-select (still CS=5). Retry there before giving up.
+    if (SD.begin(CYD_SD_CS, TFT_eSPI::getSPIinstance())) {
+        Serial.println("microSD mounted sharing the TFT's VSPI bus (12/13/14, CS=5).");
+        return true;
+    }
+
+    Serial.println("microSD not found on either the dedicated HSPI bus or the "
+                    "TFT's shared VSPI bus. Check: card is FAT32, fully seated, "
+                    "and sd_card_data/ was copied to its root.");
+    return false;
 }
 
 void setup() {
