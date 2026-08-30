@@ -109,6 +109,32 @@ void setup() {
     }
 
     App.begin();
+
+    // The SD card can mount fine as a filesystem while the actual data
+    // files are missing (most commonly: sd_card_data/ was copied onto the
+    // card as a subfolder instead of its contents going to the card's
+    // root) - that used to fail silently into an empty-looking app. Catch
+    // it here with an actionable message instead.
+    if (App.bestiary.count() == 0) {
+        char buf[220];
+        snprintf(buf, sizeof(buf),
+                 "Ошибка: данные не найдены на SD\n"
+                 "(бестиарий: %u, заклинания: %u).\n\n"
+                 "Проверьте, что файлы из sd_card_data/\n"
+                 "лежат прямо в КОРНЕ карты, а не во\n"
+                 "вложенной папке (bestiary_index.jsonl\n"
+                 "должен быть на самом верхнем уровне).",
+                 (unsigned)App.bestiary.count(), (unsigned)App.spells.count());
+        lv_obj_t *scr = lv_obj_create(NULL);
+        lv_obj_t *lbl = lv_label_create(scr);
+        lv_label_set_text(lbl, buf);
+        lv_label_set_long_mode(lbl, LV_LABEL_LONG_WRAP);
+        lv_obj_set_width(lbl, 300);
+        lv_obj_center(lbl);
+        lv_scr_load(scr);
+        return;
+    }
+
     ui_init_styles();
     ui_show_screen(SCREEN_HOME);
 }
