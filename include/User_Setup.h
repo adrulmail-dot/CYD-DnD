@@ -27,6 +27,13 @@
 #define LOAD_GFXFF
 #define SMOOTH_FONT
 
-#define SPI_FREQUENCY       40000000
-#define SPI_READ_FREQUENCY  20000000
+// 40MHz produced corrupted/garbled rendering specifically for complex,
+// rapidly-changing pixel data (text) while large solid-color fills looked
+// fine on this board (uniform data masks single-bit glitches; text data
+// doesn't) - a classic signal-integrity symptom on cheap clone wiring.
+// The font data and LVGL's own text rasterizer were separately verified
+// correct on a PC build outside the ESP32, which points at the SPI link
+// itself. Trying a safer clock here as the next hypothesis.
+#define SPI_FREQUENCY       20000000
+#define SPI_READ_FREQUENCY  16000000
 #define SPI_TOUCH_FREQUENCY 2500000
