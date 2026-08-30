@@ -70,6 +70,7 @@ bool BestiaryStore::loadDetail(const String &slug, StatBlock &out) const {
     out.senses = String(doc["senses"] | "");
     out.languages = String(doc["langs"] | "");
     out.cr = String(doc["cr"] | "");
+    out.xp = doc["xp"] | 0;
     out.vulnerabilities = String(doc["vuln"] | "");
     out.resistances = String(doc["res"] | "");
     out.immunities = String(doc["imm"] | "");

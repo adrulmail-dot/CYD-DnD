@@ -9,6 +9,7 @@ struct Character {
     String playerName = "";
     String race = "";
     String charClass = "";
+    String subclass = "";
     String background = "";
     String alignment = "";
     int level = 1;
@@ -27,6 +28,11 @@ struct Character {
     int hitDiceTotal = 1;
     int hitDiceUsed = 0;
     String hitDiceType = "d8";
+    bool inspiration = false;
+    int exhaustion = 0; // 0-6
+    int deathSaveSuccesses = 0; // 0-3
+    int deathSaveFailures = 0;  // 0-3
+    String conditions = ""; // free-form, e.g. "Отравлен, Ошеломлён"
 
     // Saving throw / skill proficiency flags (bit N = ability/skill proficient)
     bool saveProf[6] = {false, false, false, false, false, false}; // str,dex,con,int,wis,cha

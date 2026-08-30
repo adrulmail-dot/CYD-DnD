@@ -21,6 +21,7 @@ static void buildMainTab(lv_obj_t *tab) {
     ui_add_text_edit_row(tab, "Имя", &c.name);
     ui_add_text_edit_row(tab, "Раса", &c.race);
     ui_add_text_edit_row(tab, "Класс", &c.charClass);
+    ui_add_text_edit_row(tab, "Подкласс/Архетип", &c.subclass);
     ui_add_text_edit_row(tab, "Предыстория", &c.background);
     ui_add_text_edit_row(tab, "Мировоззрение", &c.alignment);
     ui_add_int_stepper_row(tab, "Уровень", &c.level, 1, 20);
@@ -50,6 +51,11 @@ static void buildMainTab(lv_obj_t *tab) {
     ui_add_int_stepper_row(tab, "Кости хитов (всего)", &c.hitDiceTotal, 1, 20);
     ui_add_int_stepper_row(tab, "Кости хитов (потрачено)", &c.hitDiceUsed, 0, 20);
     ui_add_text_edit_row(tab, "Тип кости хитов", &c.hitDiceType);
+    ui_add_checkbox(tab, "Вдохновение (Inspiration)", &c.inspiration);
+    ui_add_int_stepper_row(tab, "Истощение (Exhaustion)", &c.exhaustion, 0, 6);
+    ui_add_int_stepper_row(tab, "Спасброски от смерти: успехи", &c.deathSaveSuccesses, 0, 3);
+    ui_add_int_stepper_row(tab, "Спасброски от смерти: провалы", &c.deathSaveFailures, 0, 3);
+    ui_add_text_edit_row(tab, "Состояния", &c.conditions);
 
     addSaveButton(tab);
 }

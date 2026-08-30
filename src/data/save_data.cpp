@@ -13,6 +13,7 @@ bool save(const Character &c, const Inventory &inv, const Spellbook &sb) {
     ch["playerName"] = c.playerName;
     ch["race"] = c.race;
     ch["class"] = c.charClass;
+    ch["subclass"] = c.subclass;
     ch["background"] = c.background;
     ch["alignment"] = c.alignment;
     ch["level"] = c.level;
@@ -24,6 +25,11 @@ bool save(const Character &c, const Inventory &inv, const Spellbook &sb) {
     ch["profBonus"] = c.proficiencyBonus;
     ch["hitDiceTotal"] = c.hitDiceTotal; ch["hitDiceUsed"] = c.hitDiceUsed;
     ch["hitDiceType"] = c.hitDiceType;
+    ch["inspiration"] = c.inspiration;
+    ch["exhaustion"] = c.exhaustion;
+    ch["deathSaveSuccesses"] = c.deathSaveSuccesses;
+    ch["deathSaveFailures"] = c.deathSaveFailures;
+    ch["conditions"] = c.conditions;
     JsonArray saveProf = ch.createNestedArray("saveProf");
     for (int i = 0; i < 6; i++) saveProf.add(c.saveProf[i]);
     JsonArray skillProf = ch.createNestedArray("skillProf");
@@ -83,6 +89,7 @@ bool load(Character &c, Inventory &inv, Spellbook &sb) {
     c.playerName = String(ch["playerName"] | "");
     c.race = String(ch["race"] | "");
     c.charClass = String(ch["class"] | "");
+    c.subclass = String(ch["subclass"] | "");
     c.background = String(ch["background"] | "");
     c.alignment = String(ch["alignment"] | "");
     c.level = ch["level"] | 1;
@@ -94,6 +101,11 @@ bool load(Character &c, Inventory &inv, Spellbook &sb) {
     c.proficiencyBonus = ch["profBonus"] | 2;
     c.hitDiceTotal = ch["hitDiceTotal"] | 1; c.hitDiceUsed = ch["hitDiceUsed"] | 0;
     c.hitDiceType = String(ch["hitDiceType"] | "d8");
+    c.inspiration = ch["inspiration"] | false;
+    c.exhaustion = ch["exhaustion"] | 0;
+    c.deathSaveSuccesses = ch["deathSaveSuccesses"] | 0;
+    c.deathSaveFailures = ch["deathSaveFailures"] | 0;
+    c.conditions = String(ch["conditions"] | "");
     JsonArrayConst saveProf = ch["saveProf"];
     for (int i = 0; i < 6 && i < (int)saveProf.size(); i++) c.saveProf[i] = saveProf[i];
     JsonArrayConst skillProf = ch["skillProf"];

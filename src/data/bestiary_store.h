@@ -21,6 +21,7 @@ struct StatBlock {
     String speed;
     int str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     String senses, languages, cr;
+    int xp = 0;
     String vulnerabilities, resistances, immunities, conditionImmunities;
     String legendaryDesc;
     String img;

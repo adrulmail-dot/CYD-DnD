@@ -171,6 +171,23 @@ def slugify(name):
     return s.strip("-")
 
 
+# Standard 5e SRD challenge rating -> XP award table (Basic Rules, an open
+# game-mechanics table, not narrative Product Identity).
+CR_TO_XP = {
+    "0": 10, "1/8": 25, "1/4": 50, "1/2": 100,
+    "1": 200, "2": 450, "3": 700, "4": 1100, "5": 1800,
+    "6": 2300, "7": 2900, "8": 3900, "9": 5000, "10": 5900,
+    "11": 7200, "12": 8400, "13": 10000, "14": 11500, "15": 13000,
+    "16": 15000, "17": 18000, "18": 20000, "19": 22000, "20": 25000,
+    "21": 33000, "22": 41000, "23": 50000, "24": 62000, "25": 75000,
+    "26": 90000, "27": 105000, "28": 120000, "29": 135000, "30": 155000,
+}
+
+
+def cr_to_xp(cr):
+    return CR_TO_XP.get(str(cr).strip(), 0)
+
+
 def build_monsters(repo, out_dir):
     data = load(repo, "Monster.json")
     bestiary_dir = os.path.join(out_dir, "bestiary")
@@ -219,6 +236,7 @@ def build_monsters(repo, out_dir):
             "senses": f.get("senses") or "",
             "langs": f.get("languages") or "",
             "cr": f.get("challenge_rating", ""),
+            "xp": cr_to_xp(f.get("challenge_rating", "")),
             "img": img_slug,
             "traits": actions_compact("special_abilities_json"),
             "actions": actions_compact("actions_json"),

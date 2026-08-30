@@ -179,7 +179,8 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
     lv_obj_align(nameLbl, LV_ALIGN_LEFT_MID, 84, -10);
 
     lv_obj_t *metaLbl = lv_label_create(header);
-    String meta = ok ? (sb.size + " " + sb.type + (sb.subtype.length() ? " (" + sb.subtype + ")" : "") + " · CR " + sb.cr) : "";
+    String meta = ok ? (sb.size + " " + sb.type + (sb.subtype.length() ? " (" + sb.subtype + ")" : "") +
+                        " · CR " + sb.cr + " (" + String(sb.xp) + " XP)") : "";
     lv_label_set_text(metaLbl, meta.c_str());
     lv_obj_add_style(metaLbl, &style_dim, 0);
     lv_obj_set_style_text_font(metaLbl, &ru_font_12, 0);
