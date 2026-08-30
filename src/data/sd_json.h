@@ -12,14 +12,33 @@
 // before freeing the buffer.
 namespace sdjson {
 
+// Human-readable reason for the most recent readFileRaw()/loadInto()
+// failure, so UI code can show *why* a file didn't load instead of a bare
+// "not found" (the user has only been able to report back via screen
+// photos, not a Serial monitor, so this needs to be visible on-screen too).
+// A function-local static (rather than a namespace-scope variable) keeps
+// this header safely includable from multiple .cpp files without needing
+// a C++17 inline variable or a separate .cpp for the definition.
+inline String &lastError() {
+    static String s;
+    return s;
+}
+
 // Reads a whole file into a newly allocated, NUL-terminated buffer.
-// Returns nullptr on failure. Caller must delete[] the buffer.
+// Returns nullptr on failure (see sdjson::lastError() for why). Caller must
+// delete[] the buffer.
 inline char *readFileRaw(const String &path, size_t &outLen) {
     File f = SD.open(path, FILE_READ);
-    if (!f) return nullptr;
+    if (!f) {
+        lastError() = "open() failed: " + path;
+        Serial.println("[sdjson] " + lastError());
+        return nullptr;
+    }
     size_t size = f.size();
     char *buf = new (std::nothrow) char[size + 1];
     if (!buf) {
+        lastError() = "out of memory (" + String((unsigned)(size + 1)) + " bytes) for: " + path;
+        Serial.println("[sdjson] " + lastError());
         f.close();
         return nullptr;
     }
@@ -27,6 +46,11 @@ inline char *readFileRaw(const String &path, size_t &outLen) {
     f.close();
     buf[read] = '\0';
     outLen = read;
+    if (read != size) {
+        lastError() = "short read on " + path + ": expected " + String((unsigned)size) +
+                       " got " + String((unsigned)read);
+        Serial.println("[sdjson] " + lastError());
+    }
     return buf;
 }
 
@@ -40,6 +64,8 @@ inline bool loadInto(const String &path, JsonDocT &doc, char *&buf) {
     if (!buf) return false;
     DeserializationError err = deserializeJson(doc, buf, len);
     if (err) {
+        lastError() = "JSON parse error in " + path + ": " + err.c_str();
+        Serial.println("[sdjson] " + lastError());
         delete[] buf;
         buf = nullptr;
         return false;

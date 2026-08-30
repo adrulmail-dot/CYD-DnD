@@ -3,6 +3,7 @@
 #include "ui_widgets.h"
 #include "../fonts/ru_fonts.h"
 #include "../app_state.h"
+#include "../data/sd_json.h"
 #include <cstdlib>
 
 // ---- Known spells / slot tracker tab -----------------------------------
@@ -261,7 +262,9 @@ lv_obj_t *screen_spell_detail_create(const String &slug) {
     lv_obj_set_style_pad_all(scr, 4, 0);
 
     SpellDetail sp;
+    sdjson::lastError() = "";
     bool ok = App.spells.loadDetail(slug, sp);
+    String loadError = sdjson::lastError();
 
     lv_obj_t *header = lv_obj_create(scr);
     lv_obj_remove_style_all(header);
@@ -330,6 +333,13 @@ lv_obj_t *screen_spell_detail_create(const String &slug) {
         String descText = sp.desc;
         if (sp.higherLevel.length()) descText += "\n\nНа больших уровнях: " + sp.higherLevel;
         lv_label_set_text(descLbl, descText.c_str());
+    } else {
+        lv_obj_t *errLbl = lv_label_create(scr);
+        lv_label_set_long_mode(errLbl, LV_LABEL_LONG_WRAP);
+        lv_obj_set_width(errLbl, LV_PCT(96));
+        String msg = "Путь: /spells/" + slug + ".json\n\n";
+        msg += loadError.length() ? loadError : "Причина неизвестна (пустая ошибка).";
+        lv_label_set_text(errLbl, msg.c_str());
     }
 
     ui_add_nav_bar(scr);

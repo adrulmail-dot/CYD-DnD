@@ -3,6 +3,7 @@
 #include "img_loader.h"
 #include "../fonts/ru_fonts.h"
 #include "../app_state.h"
+#include "../data/sd_json.h"
 #include <algorithm>
 
 static const size_t MAX_RESULTS_SHOWN = 60;
@@ -132,7 +133,9 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
     lv_obj_set_style_pad_all(scr, 0, 0);
 
     StatBlock sb;
+    sdjson::lastError() = "";
     bool ok = App.bestiary.loadDetail(slug, sb);
+    String loadError = sdjson::lastError(); // captured before any later SD access overwrites it
 
     // Header: back button, image/placeholder, name + CR.
     lv_obj_t *header = lv_obj_create(scr);
@@ -243,6 +246,15 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
         lv_label_set_long_mode(tipsLbl, LV_LABEL_LONG_WRAP);
         lv_obj_set_width(tipsLbl, LV_PCT(96));
         lv_label_set_text(tipsLbl, tipsText.c_str());
+    } else {
+        // Surface exactly why the load failed so it's visible on a screen
+        // photo, since the user has no easy access to the Serial monitor.
+        lv_obj_t *errLbl = lv_label_create(tabStats);
+        lv_label_set_long_mode(errLbl, LV_LABEL_LONG_WRAP);
+        lv_obj_set_width(errLbl, LV_PCT(96));
+        String msg = "Путь: /bestiary/" + slug + ".json\n\n";
+        msg += loadError.length() ? loadError : "Причина неизвестна (пустая ошибка).";
+        lv_label_set_text(errLbl, msg.c_str());
     }
 
     ui_add_nav_bar(scr);
