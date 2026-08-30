@@ -1,6 +1,7 @@
 #include "screen_inventory.h"
 #include "ui_style.h"
 #include "ui_widgets.h"
+#include "../fonts/ru_fonts.h"
 #include "../app_state.h"
 #include <algorithm>
 #include <cstdio>
@@ -41,7 +42,7 @@ static void refreshInventory() {
         snprintf(wbuf, sizeof(wbuf), "%.1f фт.", item.weight * item.quantity);
         lv_label_set_text(weightLbl, wbuf);
         lv_obj_add_style(weightLbl, &style_dim, 0);
-        lv_obj_set_style_text_font(weightLbl, &lv_font_montserrat_12, 0);
+        lv_obj_set_style_text_font(weightLbl, &ru_font_12, 0);
 
         lv_obj_t *eqCb = lv_checkbox_create(row);
         lv_checkbox_set_text(eqCb, "Экип.");

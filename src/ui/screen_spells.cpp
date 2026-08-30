@@ -1,6 +1,7 @@
 #include "screen_spells.h"
 #include "ui_style.h"
 #include "ui_widgets.h"
+#include "../fonts/ru_fonts.h"
 #include "../app_state.h"
 #include <cstdlib>
 
@@ -278,7 +279,7 @@ lv_obj_t *screen_spell_detail_create(const String &slug) {
 
     lv_obj_t *title = lv_label_create(header);
     lv_label_set_text(title, ok ? sp.name.c_str() : "Не найдено");
-    lv_obj_set_style_text_font(title, &lv_font_montserrat_16, 0);
+    lv_obj_set_style_text_font(title, &ru_font_16, 0);
 
     lv_obj_t *addBtn = lv_btn_create(header);
     lv_obj_t *addLbl = lv_label_create(addBtn);

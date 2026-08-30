@@ -1,4 +1,5 @@
 #include "ui_style.h"
+#include "../fonts/ru_fonts.h"
 #include "screen_home.h"
 #include "screen_bestiary.h"
 #include "screen_character.h"
@@ -21,7 +22,7 @@ void ui_init_styles() {
     lv_style_set_pad_all(&style_card, 6);
 
     lv_style_init(&style_title);
-    lv_style_set_text_font(&style_title, &lv_font_montserrat_18);
+    lv_style_set_text_font(&style_title, &ru_font_18);
 
     lv_style_init(&style_dim);
     lv_style_set_text_color(&style_dim, lv_palette_main(LV_PALETTE_GREY));
@@ -53,7 +54,7 @@ void ui_add_nav_bar(lv_obj_t *parent) {
         }, LV_EVENT_CLICKED, (void *)(intptr_t)d.id);
         lv_obj_t *lbl = lv_label_create(btn);
         lv_label_set_text(lbl, d.label);
-        lv_obj_set_style_text_font(lbl, &lv_font_montserrat_12, 0);
+        lv_obj_set_style_text_font(lbl, &ru_font_12, 0);
     }
 }
 

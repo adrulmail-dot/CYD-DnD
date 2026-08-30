@@ -20,11 +20,16 @@
 #define LV_USE_PERF_MONITOR 0
 #define LV_USE_MEM_MONITOR 0
 
-#define LV_FONT_MONTSERRAT_12 1
-#define LV_FONT_MONTSERRAT_14 1
-#define LV_FONT_MONTSERRAT_16 1
-#define LV_FONT_MONTSERRAT_18 1
-#define LV_FONT_DEFAULT &lv_font_montserrat_14
+/* Stock Montserrat fonts only cover Latin glyphs - the app's UI text is
+ * Russian, so it uses custom-built fonts (Montserrat + Cyrillic + the LVGL
+ * symbol icons) declared globally here instead. See src/fonts/ru_fonts.h
+ * and tools/build_fonts.sh. */
+#define LV_FONT_MONTSERRAT_12 0
+#define LV_FONT_MONTSERRAT_14 0
+#define LV_FONT_MONTSERRAT_16 0
+#define LV_FONT_MONTSERRAT_18 0
+#define LV_FONT_CUSTOM_DECLARE LV_FONT_DECLARE(ru_font_12) LV_FONT_DECLARE(ru_font_14) LV_FONT_DECLARE(ru_font_16) LV_FONT_DECLARE(ru_font_18)
+#define LV_FONT_DEFAULT &ru_font_14
 
 #define LV_USE_LOG 0
 

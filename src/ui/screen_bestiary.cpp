@@ -1,6 +1,7 @@
 #include "screen_bestiary.h"
 #include "ui_style.h"
 #include "img_loader.h"
+#include "../fonts/ru_fonts.h"
 #include "../app_state.h"
 #include <algorithm>
 
@@ -171,14 +172,14 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
 
     lv_obj_t *nameLbl = lv_label_create(header);
     lv_label_set_text(nameLbl, ok ? sb.name.c_str() : "Не найдено");
-    lv_obj_set_style_text_font(nameLbl, &lv_font_montserrat_16, 0);
+    lv_obj_set_style_text_font(nameLbl, &ru_font_16, 0);
     lv_obj_align(nameLbl, LV_ALIGN_LEFT_MID, 84, -10);
 
     lv_obj_t *metaLbl = lv_label_create(header);
     String meta = ok ? (sb.size + " " + sb.type + (sb.subtype.length() ? " (" + sb.subtype + ")" : "") + " · CR " + sb.cr) : "";
     lv_label_set_text(metaLbl, meta.c_str());
     lv_obj_add_style(metaLbl, &style_dim, 0);
-    lv_obj_set_style_text_font(metaLbl, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(metaLbl, &ru_font_12, 0);
     lv_obj_align(metaLbl, LV_ALIGN_LEFT_MID, 84, 10);
 
     // Tabs
