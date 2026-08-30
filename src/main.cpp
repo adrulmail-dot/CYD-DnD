@@ -1,73 +1,135 @@
-// TEMPORARY rotation diagnostic build. This replaces the real app for one
-// flash cycle so we can see, on the actual hardware, which of TFT_eSPI's
-// four rotation values gives a clean, correctly-oriented, portrait image on
-// this specific board. Cycles through rotation 0/1/2/3 every 4 seconds,
-// each time filling the screen with four colored quadrants + a big
-// "ROT n / WxH" label (ASCII only, GLCD font, so this doesn't depend on the
-// Cyrillic font work happening in parallel). No LVGL, no SD, no touch -
-// deliberately minimal so a garbled/blank result can only mean the
-// rotation value itself, nothing else in the app stack.
-//
-// Report back which rotation number showed:
-//  - readable, non-garbled text
-//  - right-side up when the board is held with USB at the top
-//  - top-left quadrant actually in the top-left, etc.
-// Once known, this file will be restored to the real app with that
-// rotation hardcoded (see git history / src/main.cpp before this commit).
 #include <Arduino.h>
+#include <SPI.h>
+#include <SD.h>
 #include <TFT_eSPI.h>
+#include <lvgl.h>
+
 #include "pins.h"
+#include "version.h"
+#include "app_state.h"
+#include "ui/ui_style.h"
+#include "ui/screen_home.h"
 
 static TFT_eSPI tft = TFT_eSPI();
+static SPIClass sdSPI(HSPI);
 
-static void drawRotationTest(uint8_t rot) {
-    tft.setRotation(rot);
-    int w = tft.width();
-    int h = tft.height();
-    int hw = w / 2, hh = h / 2;
+// A raw-TFT_eSPI diagnostic (colored quadrants cycling through all 4
+// rotation values, no LVGL involved) on the actual board confirmed that
+// rotation 0 (native portrait, 240x320) fills the screen correctly with
+// everything in the right place; rotations 1 and 3 (which use ILI9341's
+// MV/row-column-exchange bit for landscape) come out compressed/sheared
+// and don't fully repaint between frames on this unit. So: plain native
+// portrait, no LVGL software rotation, no touch coordinate remapping.
+static const uint16_t SCREEN_W = 240;
+static const uint16_t SCREEN_H = 320;
 
-    tft.fillScreen(TFT_BLACK);
-    tft.fillRect(0, 0, hw, hh, TFT_RED);          // top-left
-    tft.fillRect(hw, 0, w - hw, hh, TFT_GREEN);   // top-right
-    tft.fillRect(0, hh, hw, h - hh, TFT_BLUE);    // bottom-left
-    tft.fillRect(hw, hh, w - hw, h - hh, TFT_YELLOW); // bottom-right
+static lv_disp_draw_buf_t drawBuf;
+static lv_color_t buf1[SCREEN_W * 30];
+static lv_color_t buf2[SCREEN_W * 30];
 
-    tft.setTextColor(TFT_WHITE, TFT_BLACK);
-    tft.setTextSize(3);
-    tft.setCursor(4, 4);
-    tft.printf("ROT %d", rot);
-    tft.setTextSize(2);
-    tft.setCursor(4, 32);
-    tft.printf("%dx%d", w, h);
-    tft.setTextSize(1);
-    tft.setCursor(4, h - 18);
-    tft.print("TL=RED TR=GREEN");
-    tft.setCursor(4, h - 9);
-    tft.print("BL=BLUE BR=YELLOW");
+static void dispFlush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_p) {
+    uint32_t w = area->x2 - area->x1 + 1;
+    uint32_t h = area->y2 - area->y1 + 1;
+
+    tft.startWrite();
+    tft.setAddrWindow(area->x1, area->y1, w, h);
+    tft.pushColors((uint16_t *)&color_p->full, w * h, true);
+    tft.endWrite();
+
+    lv_disp_flush_ready(drv);
+}
+
+static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
+    uint16_t x, y;
+    bool touched = tft.getTouch(&x, &y);
+    if (touched) {
+        data->state = LV_INDEV_STATE_PR;
+        data->point.x = x;
+        data->point.y = y;
+    } else {
+        data->state = LV_INDEV_STATE_REL;
+    }
+}
+
+static void initDisplayAndTouch() {
+    tft.init();
+    tft.setRotation(0); // portrait, 240x320 - confirmed correct on this
+                         // board by the raw-TFT rotation diagnostic.
+    pinMode(CYD_TFT_BL, OUTPUT);
+    digitalWrite(CYD_TFT_BL, HIGH);
+
+    // Calibration data for the resistive XPT2046 touch panel. These are the
+    // commonly published defaults for the CYD ESP32-2432S028; run the
+    // TFT_eSPI touch calibration sketch once and paste your own values here
+    // if touch coordinates feel off on your particular unit.
+    uint16_t calData[5] = {200, 3700, 200, 3700, 7};
+    tft.setTouch(calData);
+
+    lv_init();
+    lv_disp_draw_buf_init(&drawBuf, buf1, buf2, SCREEN_W * 30);
+
+    static lv_disp_drv_t dispDrv;
+    lv_disp_drv_init(&dispDrv);
+    dispDrv.hor_res = SCREEN_W;
+    dispDrv.ver_res = SCREEN_H;
+    dispDrv.flush_cb = dispFlush;
+    dispDrv.draw_buf = &drawBuf;
+    lv_disp_drv_register(&dispDrv);
+
+    static lv_indev_drv_t indevDrv;
+    lv_indev_drv_init(&indevDrv);
+    indevDrv.type = LV_INDEV_TYPE_POINTER;
+    indevDrv.read_cb = touchRead;
+    lv_indev_drv_register(&indevDrv);
+}
+
+static bool initSd() {
+    // Strategy 1: SD card on its own SPI bus (HSPI) - the most commonly
+    // published wiring for this board (SCK=18, MISO=19, MOSI=23, CS=5).
+    sdSPI.begin(CYD_SD_SCK, CYD_SD_MISO, CYD_SD_MOSI, CYD_SD_CS);
+    if (SD.begin(CYD_SD_CS, sdSPI)) {
+        Serial.println("microSD mounted on dedicated HSPI bus (18/19/23, CS=5).");
+        return true;
+    }
+    SD.end();
+
+    // Strategy 2: some CYD board revisions instead wire the SD card onto
+    // the *same* SPI bus as the TFT/touch (VSPI: 12/13/14), differing only
+    // by chip-select (still CS=5). Retry there before giving up.
+    if (SD.begin(CYD_SD_CS, TFT_eSPI::getSPIinstance())) {
+        Serial.println("microSD mounted sharing the TFT's VSPI bus (12/13/14, CS=5).");
+        return true;
+    }
+
+    Serial.println("microSD not found on either the dedicated HSPI bus or the "
+                    "TFT's shared VSPI bus. Check: card is FAT32, fully seated, "
+                    "and sd_card_data/ was copied to its root.");
+    return false;
 }
 
 void setup() {
     Serial.begin(115200);
-    delay(200);
-    Serial.println("=== ROTATION DIAGNOSTIC BUILD ===");
-    Serial.println("Cycling rotation 0,1,2,3 every 4s. Report which one is");
-    Serial.println("clean/correct (text readable, right-side up, USB at top).");
+    Serial.println("CYD D&D Bestiary & Spell Tracker v" APP_VERSION);
+    initDisplayAndTouch();
 
-    tft.init();
-    pinMode(CYD_TFT_BL, OUTPUT);
-    digitalWrite(CYD_TFT_BL, HIGH);
+    if (!initSd()) {
+        Serial.println("microSD not found - insert a card with sd_card_data/ copied to its root.");
+        lv_obj_t *scr = lv_obj_create(NULL);
+        lv_obj_t *lbl = lv_label_create(scr);
+        lv_label_set_text(lbl, "Ошибка: не найдена microSD\nСкопируйте sd_card_data/\nна карту и перезагрузите.");
+        lv_label_set_long_mode(lbl, LV_LABEL_LONG_WRAP);
+        lv_obj_set_width(lbl, 220);
+        lv_obj_center(lbl);
+        lv_scr_load(scr);
+        return;
+    }
+
+    App.begin();
+    ui_init_styles();
+    ui_show_screen(SCREEN_HOME);
 }
 
 void loop() {
-    static uint8_t rot = 0;
-    drawRotationTest(rot);
-    Serial.print("Showing ROT ");
-    Serial.print(rot);
-    Serial.print(" (");
-    Serial.print(tft.width());
-    Serial.print("x");
-    Serial.print(tft.height());
-    Serial.println(")");
-    rot = (rot + 1) % 4;
-    delay(4000);
+    lv_timer_handler();
+    delay(5);
 }
