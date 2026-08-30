@@ -39,6 +39,7 @@ static void dispFlush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *col
     lv_disp_flush_ready(drv);
 }
 
+#if 0 // touch temporarily disabled, see initDisplayAndTouch()
 static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
     uint16_t x, y;
     bool touched = tft.getTouch(&x, &y);
@@ -50,6 +51,7 @@ static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
         data->state = LV_INDEV_STATE_REL;
     }
 }
+#endif
 
 static void initDisplayAndTouch() {
     tft.init();
@@ -76,11 +78,20 @@ static void initDisplayAndTouch() {
     dispDrv.draw_buf = &drawBuf;
     lv_disp_drv_register(&dispDrv);
 
-    static lv_indev_drv_t indevDrv;
-    lv_indev_drv_init(&indevDrv);
-    indevDrv.type = LV_INDEV_TYPE_POINTER;
-    indevDrv.read_cb = touchRead;
-    lv_indev_drv_register(&indevDrv);
+    // TEMPORARILY DISABLED: touch never registers a press on this board
+    // (getTouch() always returns false) and disabling it is being tested
+    // as a fix for the text-rendering corruption too - tft.getTouch()
+    // does up to 5 SPI probes every ~30ms, each with an internal
+    // wait-for-pressure-to-stabilize loop; if the touch chip isn't
+    // actually wired/responding the way XPT2046 is expected to, those
+    // probes could be leaving the shared SPI bus in a bad state before
+    // the next display write. Re-enable once touch hardware is confirmed
+    // working (see README).
+    // static lv_indev_drv_t indevDrv;
+    // lv_indev_drv_init(&indevDrv);
+    // indevDrv.type = LV_INDEV_TYPE_POINTER;
+    // indevDrv.read_cb = touchRead;
+    // lv_indev_drv_register(&indevDrv);
 }
 
 static bool initSd() {
