@@ -145,16 +145,16 @@ static void openTextEditor(String *target, bool multiline, lv_obj_t *rowValueLab
     lv_obj_clear_flag(modal, LV_OBJ_FLAG_SCROLLABLE);
 
     lv_obj_t *panel = lv_obj_create(modal);
-    lv_obj_set_size(panel, LV_PCT(92), multiline ? 150 : 70);
-    lv_obj_align(panel, LV_ALIGN_TOP_MID, 0, 8);
+    lv_obj_set_size(panel, LV_PCT(92), multiline ? 105 : 60);
+    lv_obj_align(panel, LV_ALIGN_TOP_MID, 0, 4);
 
     lv_obj_t *ta = lv_textarea_create(panel);
-    lv_obj_set_size(ta, LV_PCT(100), multiline ? 110 : 40);
+    lv_obj_set_size(ta, LV_PCT(100), multiline ? 75 : 34);
     lv_textarea_set_one_line(ta, !multiline);
     lv_textarea_set_text(ta, target->c_str());
 
     lv_obj_t *kb = lv_keyboard_create(modal);
-    lv_obj_set_size(kb, LV_PCT(100), 150);
+    lv_obj_set_size(kb, LV_PCT(100), 115);
     lv_obj_align(kb, LV_ALIGN_BOTTOM_MID, 0, 0);
     lv_keyboard_set_textarea(kb, ta);
 

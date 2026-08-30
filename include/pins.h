@@ -1,10 +1,11 @@
 #pragma once
 // Pin map for the "Cheap Yellow Display" ESP32-2432S028 (resistive touch
-// revision). Widely used community pinout - shared by the single-micro-USB
-// and dual-USB (micro-USB + USB-C) board revisions, since only the USB
-// connector changes between them, not the GPIO wiring.
+// revision, incl. the dual-USB "CYD-2USB" variant). Cross-checked against
+// pr3y/Bruce's board config for this exact model (boards/CYD-2432S028) after
+// this project's original assumptions (TFT on default VSPI, touch sharing
+// that bus) turned out to be wrong on real hardware.
 
-// --- TFT (ILI9341), SPI bus VSPI ---
+// --- TFT (ILI9341), forced onto the HSPI peripheral - see include/User_Setup.h ---
 #define CYD_TFT_MISO 12
 #define CYD_TFT_MOSI 13
 #define CYD_TFT_SCLK 14
@@ -13,11 +14,18 @@
 #define CYD_TFT_RST  -1   // not connected, tied to EN
 #define CYD_TFT_BL   21   // backlight, active HIGH
 
-// --- Touch (XPT2046), shares VSPI bus with the TFT ---
-#define CYD_TOUCH_CS  33
-#define CYD_TOUCH_IRQ 36
+// --- Touch (XPT2046) ---
+// NOT on the TFT's SPI bus on this board: it has its own dedicated pins,
+// read via bit-banged (software) SPI. See src/touch/CYD28_TouchscreenR.*
+// (ported from pr3y/Bruce, itself from Paul Stoffregen's XPT2046_Touchscreen
+// with CYD28-specific pins/calibration by Piotr Zapart).
+#define CYD_TOUCH_CS   33
+#define CYD_TOUCH_IRQ  36
+#define CYD_TOUCH_MOSI 32
+#define CYD_TOUCH_MISO 39
+#define CYD_TOUCH_CLK  25
 
-// --- microSD card, separate SPI bus (HSPI) ---
+// --- microSD card, separate SPI bus (VSPI, since the TFT now owns HSPI) ---
 #define CYD_SD_CS   5
 #define CYD_SD_MOSI 23
 #define CYD_SD_MISO 19

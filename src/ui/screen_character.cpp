@@ -113,7 +113,7 @@ lv_obj_t *screen_character_create() {
     lv_obj_set_style_pad_all(scr, 0, 0);
 
     lv_obj_t *tv = lv_tabview_create(scr, LV_DIR_TOP, 30);
-    lv_obj_set_size(tv, LV_PCT(100), 320 - NAV_BAR_HEIGHT);
+    lv_obj_set_size(tv, LV_PCT(100), 240 - NAV_BAR_HEIGHT);
 
     lv_obj_t *tabMain = lv_tabview_add_tab(tv, "Герой");
     lv_obj_t *tabSkills = lv_tabview_add_tab(tv, "Навыки");

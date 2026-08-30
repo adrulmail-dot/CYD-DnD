@@ -184,7 +184,7 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
 
     // Tabs
     lv_obj_t *tv = lv_tabview_create(scr, LV_DIR_TOP, 28);
-    lv_obj_set_size(tv, LV_PCT(100), 320 - 56 - NAV_BAR_HEIGHT);
+    lv_obj_set_size(tv, LV_PCT(100), 240 - 56 - NAV_BAR_HEIGHT);
     lv_obj_align_to(tv, header, LV_ALIGN_OUT_BOTTOM_MID, 0, 0);
 
     lv_obj_t *tabStats = lv_tabview_add_tab(tv, "Статы");

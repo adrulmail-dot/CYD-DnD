@@ -1,10 +1,24 @@
 // TFT_eSPI configuration for the CYD ESP32-2432S028 (ILI9341, 320x240 SPI).
 // Force-included into every translation unit via platformio.ini build_flags.
+//
+// Cross-checked against pr3y/Bruce's proven config for this exact board
+// (boards/CYD-2432S028/CYD-2432S028.ini, [env:CYD-2432S028] / [env:CYD-2USB])
+// after the original settings here (ILI9341_DRIVER, default VSPI, touch
+// sharing the TFT bus) produced garbled text rendering and non-functional
+// touch on the real device. Two concrete differences from Bruce's config:
+//  - ILI9341_2_DRIVER: an alternate ILI9341 init sequence (different
+//    power/VCOM/gamma register values) that this particular clone panel
+//    needs - see https://github.com/Bodmer/TFT_eSPI/issues/1172.
+//  - USE_HSPI_PORT: puts the TFT on the HSPI peripheral instead of the
+//    default VSPI (the microSD card uses VSPI instead now - see main.cpp).
+// Touch is NOT on this bus at all on this board (see pins.h) so there is
+// no TOUCH_CS here; it's read via the separate driver in src/touch/.
 #pragma once
 
 #include "pins.h"
 
-#define ILI9341_DRIVER
+#define ILI9341_2_DRIVER
+#define USE_HSPI_PORT
 
 #define TFT_MISO CYD_TFT_MISO
 #define TFT_MOSI CYD_TFT_MOSI
@@ -15,9 +29,6 @@
 #define TFT_BL   CYD_TFT_BL
 #define TFT_BACKLIGHT_ON HIGH
 
-// XPT2046 touch shares the TFT SPI bus on this board.
-#define TOUCH_CS CYD_TOUCH_CS
-
 #define LOAD_GLCD
 #define LOAD_FONT2
 #define LOAD_FONT4
@@ -27,13 +38,9 @@
 #define LOAD_GFXFF
 #define SMOOTH_FONT
 
-// 40MHz produced corrupted/garbled rendering specifically for complex,
-// rapidly-changing pixel data (text) while large solid-color fills looked
-// fine on this board (uniform data masks single-bit glitches; text data
-// doesn't) - a classic signal-integrity symptom on cheap clone wiring.
-// The font data and LVGL's own text rasterizer were separately verified
-// correct on a PC build outside the ESP32, which points at the SPI link
-// itself. Trying a safer clock here as the next hypothesis.
-#define SPI_FREQUENCY       20000000
+// Matches Bruce's proven values for this board - the earlier corruption
+// wasn't actually an SPI-clock issue (lowering it to 20MHz alone didn't
+// help), so back to the standard 40MHz now that the real cause (wrong
+// driver/SPI port) is fixed.
+#define SPI_FREQUENCY       40000000
 #define SPI_READ_FREQUENCY  16000000
-#define SPI_TOUCH_FREQUENCY 2500000

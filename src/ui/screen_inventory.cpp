@@ -87,8 +87,8 @@ static void openAddCustomDialog() {
     lv_obj_set_style_bg_opa(modal, LV_OPA_60, 0);
 
     lv_obj_t *panel = lv_obj_create(modal);
-    lv_obj_set_size(panel, LV_PCT(90), 150);
-    lv_obj_align(panel, LV_ALIGN_TOP_MID, 0, 10);
+    lv_obj_set_size(panel, LV_PCT(90), 100);
+    lv_obj_align(panel, LV_ALIGN_TOP_MID, 0, 4);
     lv_obj_set_flex_flow(panel, LV_FLEX_FLOW_COLUMN);
 
     lv_obj_t *nameTa = lv_textarea_create(panel);
@@ -107,7 +107,7 @@ static void openAddCustomDialog() {
     lv_label_set_text(addLbl, "Добавить");
 
     lv_obj_t *kb = lv_keyboard_create(modal);
-    lv_obj_set_size(kb, LV_PCT(100), 140);
+    lv_obj_set_size(kb, LV_PCT(100), 120);
     lv_obj_align(kb, LV_ALIGN_BOTTOM_MID, 0, 0);
     lv_keyboard_set_textarea(kb, nameTa);
 

@@ -9,19 +9,23 @@
 #include "app_state.h"
 #include "ui/ui_style.h"
 #include "ui/screen_home.h"
+#include "touch/CYD28_TouchscreenR.h"
 
 static TFT_eSPI tft = TFT_eSPI();
-static SPIClass sdSPI(HSPI);
+static SPIClass sdSPI(VSPI); // TFT now owns HSPI (see User_Setup.h), so the
+                              // SD card gets the other hardware SPI unit.
 
-// A raw-TFT_eSPI diagnostic (colored quadrants cycling through all 4
-// rotation values, no LVGL involved) on the actual board confirmed that
-// rotation 0 (native portrait, 240x320) fills the screen correctly with
-// everything in the right place; rotations 1 and 3 (which use ILI9341's
-// MV/row-column-exchange bit for landscape) come out compressed/sheared
-// and don't fully repaint between frames on this unit. So: plain native
-// portrait, no LVGL software rotation, no touch coordinate remapping.
-static const uint16_t SCREEN_W = 240;
-static const uint16_t SCREEN_H = 320;
+// Matches pr3y/Bruce's proven config for this exact board (see
+// User_Setup.h and pins.h for the full story): rotation 3 (landscape,
+// 320x240) is the orientation this hardware actually renders and reports
+// touch coordinates for cleanly. A portrait UI can be layered back on top
+// later via LVGL's software rotation now that the underlying raw pipeline
+// is confirmed correct - shipping landscape first to validate that.
+static const uint16_t SCREEN_W = 320;
+static const uint16_t SCREEN_H = 240;
+static const uint8_t DISPLAY_ROTATION = 3;
+
+static CYD28_TouchR touch(SCREEN_W, SCREEN_H);
 
 static lv_disp_draw_buf_t drawBuf;
 static lv_color_t buf1[SCREEN_W * 30];
@@ -39,33 +43,25 @@ static void dispFlush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *col
     lv_disp_flush_ready(drv);
 }
 
-#if 0 // touch temporarily disabled, see initDisplayAndTouch()
 static void touchRead(lv_indev_drv_t *drv, lv_indev_data_t *data) {
-    uint16_t x, y;
-    bool touched = tft.getTouch(&x, &y);
-    if (touched) {
+    if (touch.touched()) {
+        CYD28_TS_Point p = touch.getPointScaled();
         data->state = LV_INDEV_STATE_PR;
-        data->point.x = x;
-        data->point.y = y;
+        data->point.x = p.x;
+        data->point.y = p.y;
     } else {
         data->state = LV_INDEV_STATE_REL;
     }
 }
-#endif
 
 static void initDisplayAndTouch() {
     tft.init();
-    tft.setRotation(0); // portrait, 240x320 - confirmed correct on this
-                         // board by the raw-TFT rotation diagnostic.
+    tft.setRotation(DISPLAY_ROTATION);
     pinMode(CYD_TFT_BL, OUTPUT);
     digitalWrite(CYD_TFT_BL, HIGH);
 
-    // Calibration data for the resistive XPT2046 touch panel. These are the
-    // commonly published defaults for the CYD ESP32-2432S028; run the
-    // TFT_eSPI touch calibration sketch once and paste your own values here
-    // if touch coordinates feel off on your particular unit.
-    uint16_t calData[5] = {200, 3700, 200, 3700, 7};
-    tft.setTouch(calData);
+    touch.begin();
+    touch.setRotation(DISPLAY_ROTATION);
 
     lv_init();
     lv_disp_draw_buf_init(&drawBuf, buf1, buf2, SCREEN_W * 30);
@@ -78,42 +74,20 @@ static void initDisplayAndTouch() {
     dispDrv.draw_buf = &drawBuf;
     lv_disp_drv_register(&dispDrv);
 
-    // TEMPORARILY DISABLED: touch never registers a press on this board
-    // (getTouch() always returns false) and disabling it is being tested
-    // as a fix for the text-rendering corruption too - tft.getTouch()
-    // does up to 5 SPI probes every ~30ms, each with an internal
-    // wait-for-pressure-to-stabilize loop; if the touch chip isn't
-    // actually wired/responding the way XPT2046 is expected to, those
-    // probes could be leaving the shared SPI bus in a bad state before
-    // the next display write. Re-enable once touch hardware is confirmed
-    // working (see README).
-    // static lv_indev_drv_t indevDrv;
-    // lv_indev_drv_init(&indevDrv);
-    // indevDrv.type = LV_INDEV_TYPE_POINTER;
-    // indevDrv.read_cb = touchRead;
-    // lv_indev_drv_register(&indevDrv);
+    static lv_indev_drv_t indevDrv;
+    lv_indev_drv_init(&indevDrv);
+    indevDrv.type = LV_INDEV_TYPE_POINTER;
+    indevDrv.read_cb = touchRead;
+    lv_indev_drv_register(&indevDrv);
 }
 
 static bool initSd() {
-    // Strategy 1: SD card on its own SPI bus (HSPI) - the most commonly
-    // published wiring for this board (SCK=18, MISO=19, MOSI=23, CS=5).
     sdSPI.begin(CYD_SD_SCK, CYD_SD_MISO, CYD_SD_MOSI, CYD_SD_CS);
     if (SD.begin(CYD_SD_CS, sdSPI)) {
-        Serial.println("microSD mounted on dedicated HSPI bus (18/19/23, CS=5).");
+        Serial.println("microSD mounted on VSPI (18/19/23, CS=5).");
         return true;
     }
-    SD.end();
-
-    // Strategy 2: some CYD board revisions instead wire the SD card onto
-    // the *same* SPI bus as the TFT/touch (VSPI: 12/13/14), differing only
-    // by chip-select (still CS=5). Retry there before giving up.
-    if (SD.begin(CYD_SD_CS, TFT_eSPI::getSPIinstance())) {
-        Serial.println("microSD mounted sharing the TFT's VSPI bus (12/13/14, CS=5).");
-        return true;
-    }
-
-    Serial.println("microSD not found on either the dedicated HSPI bus or the "
-                    "TFT's shared VSPI bus. Check: card is FAT32, fully seated, "
+    Serial.println("microSD not found. Check: card is FAT32, fully seated, "
                     "and sd_card_data/ was copied to its root.");
     return false;
 }
@@ -124,12 +98,11 @@ void setup() {
     initDisplayAndTouch();
 
     if (!initSd()) {
-        Serial.println("microSD not found - insert a card with sd_card_data/ copied to its root.");
         lv_obj_t *scr = lv_obj_create(NULL);
         lv_obj_t *lbl = lv_label_create(scr);
         lv_label_set_text(lbl, "Ошибка: не найдена microSD\nСкопируйте sd_card_data/\nна карту и перезагрузите.");
         lv_label_set_long_mode(lbl, LV_LABEL_LONG_WRAP);
-        lv_obj_set_width(lbl, 220);
+        lv_obj_set_width(lbl, 280);
         lv_obj_center(lbl);
         lv_scr_load(scr);
         return;
