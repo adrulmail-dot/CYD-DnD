@@ -51,11 +51,29 @@ lv_obj_t *screen_home_create() {
         lv_obj_set_style_text_font(lbl, &ru_font_16, 0);
     }
 
-    lv_obj_t *version = lv_label_create(scr);
+    lv_obj_t *statusRow = lv_obj_create(scr);
+    lv_obj_remove_style_all(statusRow);
+    lv_obj_set_size(statusRow, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+    lv_obj_set_flex_flow(statusRow, LV_FLEX_FLOW_ROW);
+    lv_obj_set_flex_align(statusRow, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    lv_obj_set_style_pad_column(statusRow, 6, 0);
+    lv_obj_clear_flag(statusRow, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_align(statusRow, LV_ALIGN_BOTTOM_MID, 0, -4);
+
+    lv_obj_t *version = lv_label_create(statusRow);
     lv_label_set_text(version, "v" APP_VERSION);
     lv_obj_set_style_text_color(version, lv_palette_darken(LV_PALETTE_GREY, 1), 0);
     lv_obj_set_style_text_font(version, &ru_font_12, 0);
-    lv_obj_align(version, LV_ALIGN_BOTTOM_MID, 0, -4);
+
+    // Quick at-a-glance SD/data status: a card icon when the bestiary
+    // actually loaded entries, a red cross when the card is missing or
+    // the data files weren't found (see the diagnostic in main.cpp for
+    // the detailed error screen version of this same check).
+    bool sdOk = App.dataLoaded && App.bestiary.count() > 0;
+    lv_obj_t *sdIcon = lv_label_create(statusRow);
+    lv_label_set_text(sdIcon, sdOk ? LV_SYMBOL_SD_CARD : LV_SYMBOL_CLOSE);
+    lv_obj_set_style_text_color(sdIcon, sdOk ? lv_palette_main(LV_PALETTE_GREEN) : lv_palette_main(LV_PALETTE_RED), 0);
+    lv_obj_set_style_text_font(sdIcon, &ru_font_12, 0);
 
     return scr;
 }
