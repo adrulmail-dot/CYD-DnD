@@ -6,7 +6,7 @@
 static void addSaveButton(lv_obj_t *parent) {
     lv_obj_t *btn = lv_btn_create(parent);
     lv_obj_set_size(btn, LV_PCT(100), 32);
-    lv_obj_set_style_bg_color(btn, lv_palette_main(LV_PALETTE_GREEN), 0);
+    lv_obj_set_style_bg_color(btn, lv_color_hex(UI_COLOR_GREEN), 0);
     lv_obj_add_event_cb(btn, [](lv_event_t *) { App.persist(); }, LV_EVENT_CLICKED, nullptr);
     lv_obj_t *lbl = lv_label_create(btn);
     lv_label_set_text(lbl, LV_SYMBOL_SAVE " Сохранить персонажа");
@@ -115,7 +115,7 @@ static void buildNotesTab(lv_obj_t *tab) {
 }
 
 lv_obj_t *screen_character_create() {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_style_pad_all(scr, 0, 0);
 
     lv_obj_t *tv = lv_tabview_create(scr, LV_DIR_TOP, 30);

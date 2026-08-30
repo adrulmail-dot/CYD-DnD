@@ -26,3 +26,19 @@ for SIZE in 12 14 16 18; do
         --format lvgl -o "$OUT_DIR/ru_font_$SIZE.c" --force-fast-kern-format
     echo "Generated $OUT_DIR/ru_font_$SIZE.c"
 done
+
+# Retro "Press Start 2P" pixel font (14px only) for short, bounded UI text -
+# stat-tile numbers and CR/level badges in the retro-RPG theme. NOT safe for
+# labels, nav bar text or body copy: measured ~1.6x wider per Cyrillic glyph
+# than ru_font_* at the same size, so long/variable-length strings overflow.
+# (Note: the popular "Pixelify Sans" font was tried first and rejected - it is
+# missing the Cyrillic capital letters О and П entirely, which would silently
+# render as tofu boxes in real Russian words.)
+PRESS_START_TTF="${2:?Usage: build_fonts.sh /path/to/lvgl/checkout /path/to/PressStart2P-Regular.ttf}"
+lv_font_conv --no-compress --no-prefilter --bpp 4 --size 14 \
+    --font "$PRESS_START_TTF" \
+    -r 0x20-0x7F,0xB0,0x2022,0x400-0x45F \
+    --font "$LVGL_DIR/scripts/built_in_font/FontAwesome5-Solid+Brands+Regular.woff" \
+    -r "$SYMS" \
+    --format lvgl -o "$OUT_DIR/ru_pixel_14.c" --force-fast-kern-format
+echo "Generated $OUT_DIR/ru_pixel_14.c"

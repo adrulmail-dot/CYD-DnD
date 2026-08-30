@@ -1,4 +1,5 @@
 #include "ui_widgets.h"
+#include "ui_style.h"
 
 // ---- shared row layout helpers ----------------------------------------
 
@@ -187,7 +188,7 @@ lv_obj_t *ui_add_text_edit_row(lv_obj_t *parent, const char *label, String *valu
     lv_obj_t *row = makeRow(parent, label, nullptr);
     lv_obj_t *valueLbl = lv_label_create(row);
     lv_label_set_text(valueLbl, value->c_str());
-    lv_obj_set_style_text_color(valueLbl, lv_palette_main(LV_PALETTE_BLUE), 0);
+    lv_obj_set_style_text_color(valueLbl, lv_color_hex(UI_COLOR_BLUE), 0);
 
     struct ClickCtx { String *value; lv_obj_t *valueLbl; };
     auto *ctx = new ClickCtx{value, valueLbl};
@@ -206,7 +207,7 @@ lv_obj_t *ui_add_textarea_edit_row(lv_obj_t *parent, const char *label, String *
     lv_obj_t *row = makeRow(parent, label, nullptr);
     lv_obj_t *valueLbl = lv_label_create(row);
     lv_label_set_text(valueLbl, value->length() ? "..." : "(пусто)");
-    lv_obj_set_style_text_color(valueLbl, lv_palette_main(LV_PALETTE_BLUE), 0);
+    lv_obj_set_style_text_color(valueLbl, lv_color_hex(UI_COLOR_BLUE), 0);
 
     struct ClickCtx { String *value; lv_obj_t *valueLbl; };
     auto *ctx = new ClickCtx{value, valueLbl};

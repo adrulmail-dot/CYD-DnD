@@ -54,7 +54,7 @@ static void refreshInventory() {
 
         lv_obj_t *delBtn = lv_btn_create(row);
         lv_obj_set_size(delBtn, 28, 28);
-        lv_obj_set_style_bg_color(delBtn, lv_palette_main(LV_PALETTE_RED), 0);
+        lv_obj_set_style_bg_color(delBtn, lv_color_hex(UI_COLOR_RED), 0);
         lv_obj_t *delLbl = lv_label_create(delBtn);
         lv_label_set_text(delLbl, LV_SYMBOL_TRASH);
         lv_obj_center(delLbl);
@@ -71,9 +71,9 @@ static void refreshInventory() {
     snprintf(summary, sizeof(summary), "Вес: %.1f / %.1f фт. (Сила x15)", total, cap);
     lv_label_set_text(s_summaryLabel, summary);
     if (total > cap) {
-        lv_obj_set_style_text_color(s_summaryLabel, lv_palette_main(LV_PALETTE_RED), 0);
+        lv_obj_set_style_text_color(s_summaryLabel, lv_color_hex(UI_COLOR_RED), 0);
     } else {
-        lv_obj_set_style_text_color(s_summaryLabel, lv_palette_main(LV_PALETTE_GREEN), 0);
+        lv_obj_set_style_text_color(s_summaryLabel, lv_color_hex(UI_COLOR_GREEN), 0);
     }
 }
 
@@ -146,7 +146,7 @@ static void openCatalogDialog() {
     lv_obj_t *modal = lv_obj_create(lv_layer_top());
     lv_obj_remove_style_all(modal);
     lv_obj_set_size(modal, LV_PCT(100), LV_PCT(100));
-    lv_obj_set_style_bg_color(modal, lv_color_hex(0xffffff), 0);
+    lv_obj_set_style_bg_color(modal, lv_color_hex(UI_COLOR_BG), 0);
     lv_obj_set_style_bg_opa(modal, LV_OPA_COVER, 0);
 
     lv_obj_t *closeBtn = lv_btn_create(modal);
@@ -253,7 +253,7 @@ static void openCatalogDialog() {
 }
 
 lv_obj_t *screen_inventory_create() {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_flex_flow(scr, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_style_pad_all(scr, 4, 0);
     lv_obj_set_style_pad_row(scr, 4, 0);

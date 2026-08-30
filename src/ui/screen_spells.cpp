@@ -101,7 +101,7 @@ static void refreshKnown() {
 
         lv_obj_t *delBtn = lv_btn_create(row);
         lv_obj_set_size(delBtn, 26, 26);
-        lv_obj_set_style_bg_color(delBtn, lv_palette_main(LV_PALETTE_RED), 0);
+        lv_obj_set_style_bg_color(delBtn, lv_color_hex(UI_COLOR_RED), 0);
         lv_obj_t *delLbl = lv_label_create(delBtn);
         lv_label_set_text(delLbl, LV_SYMBOL_TRASH);
         lv_obj_center(delLbl);
@@ -118,7 +118,7 @@ static void buildMineTab(lv_obj_t *tab) {
 
     lv_obj_t *restBtn = lv_btn_create(tab);
     lv_obj_set_size(restBtn, LV_PCT(100), 30);
-    lv_obj_set_style_bg_color(restBtn, lv_palette_main(LV_PALETTE_INDIGO), 0);
+    lv_obj_set_style_bg_color(restBtn, lv_color_hex(UI_COLOR_PURPLE), 0);
     lv_obj_t *restLbl = lv_label_create(restBtn);
     lv_label_set_text(restLbl, "Долгий отдых (сброс ячеек)");
     lv_obj_center(restLbl);
@@ -146,7 +146,7 @@ static void buildMineTab(lv_obj_t *tab) {
 
     lv_obj_t *saveBtn = lv_btn_create(tab);
     lv_obj_set_size(saveBtn, LV_PCT(100), 32);
-    lv_obj_set_style_bg_color(saveBtn, lv_palette_main(LV_PALETTE_GREEN), 0);
+    lv_obj_set_style_bg_color(saveBtn, lv_color_hex(UI_COLOR_GREEN), 0);
     lv_obj_add_event_cb(saveBtn, [](lv_event_t *) { App.persist(); }, LV_EVENT_CLICKED, nullptr);
     lv_obj_t *saveLbl = lv_label_create(saveBtn);
     lv_label_set_text(saveLbl, LV_SYMBOL_SAVE " Сохранить");
@@ -238,7 +238,7 @@ static void buildCatalogTab(lv_obj_t *tab) {
 }
 
 lv_obj_t *screen_spells_list_create() {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_style_pad_all(scr, 0, 0);
 
     lv_obj_t *tv = lv_tabview_create(scr, LV_DIR_TOP, 30);
@@ -257,7 +257,7 @@ lv_obj_t *screen_spells_list_create() {
 // ---- Spell detail screen ------------------------------------------------
 
 lv_obj_t *screen_spell_detail_create(const String &slug) {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_flex_flow(scr, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_style_pad_all(scr, 4, 0);
 
@@ -307,9 +307,25 @@ lv_obj_t *screen_spell_detail_create(const String &slug) {
     }
 
     if (ok) {
+        lv_obj_t *badgeRow = lv_obj_create(scr);
+        lv_obj_remove_style_all(badgeRow);
+        lv_obj_set_size(badgeRow, LV_PCT(100), LV_SIZE_CONTENT);
+        lv_obj_set_flex_flow(badgeRow, LV_FLEX_FLOW_ROW_WRAP);
+        lv_obj_set_style_pad_column(badgeRow, 4, 0);
+        lv_obj_clear_flag(badgeRow, LV_OBJ_FLAG_SCROLLABLE);
+        char lvlBuf[16];
+        if (sp.level == 0) {
+            snprintf(lvlBuf, sizeof(lvlBuf), "Заговор");
+        } else {
+            snprintf(lvlBuf, sizeof(lvlBuf), "Уровень %d", sp.level);
+        }
+        ui_make_badge(badgeRow, lvlBuf, lv_color_hex(UI_COLOR_PURPLE));
+        if (sp.school.length()) ui_make_badge(badgeRow, sp.school.c_str(), lv_color_hex(UI_COLOR_BLUE));
+        if (sp.concentration) ui_make_badge(badgeRow, "Концентрация", lv_color_hex(UI_COLOR_AMBER));
+        if (sp.ritual) ui_make_badge(badgeRow, "Ритуал", lv_color_hex(UI_COLOR_GREEN));
+
         lv_obj_t *meta = lv_label_create(scr);
-        String metaText = "Уровень " + String(sp.level) + ", " + sp.school + "\n";
-        metaText += "Время накладывания: " + sp.castingTime + "\n";
+        String metaText = "Время накладывания: " + sp.castingTime + "\n";
         metaText += "Дистанция: " + sp.range + "\n";
         metaText += "Длительность: " + sp.duration + (sp.concentration ? " (концентрация)" : "") + "\n";
         String comp = "";

@@ -72,7 +72,8 @@ static void initDisplayAndTouch() {
     dispDrv.ver_res = SCREEN_H;
     dispDrv.flush_cb = dispFlush;
     dispDrv.draw_buf = &drawBuf;
-    lv_disp_drv_register(&dispDrv);
+    lv_disp_t *disp = lv_disp_drv_register(&dispDrv);
+    ui_apply_dark_theme(disp);
 
     static lv_indev_drv_t indevDrv;
     lv_indev_drv_init(&indevDrv);
@@ -98,7 +99,7 @@ void setup() {
     initDisplayAndTouch();
 
     if (!initSd()) {
-        lv_obj_t *scr = lv_obj_create(NULL);
+        lv_obj_t *scr = ui_new_screen();
         lv_obj_t *lbl = lv_label_create(scr);
         lv_label_set_text(lbl, "Ошибка: не найдена microSD\nСкопируйте sd_card_data/\nна карту и перезагрузите.");
         lv_label_set_long_mode(lbl, LV_LABEL_LONG_WRAP);
@@ -125,7 +126,7 @@ void setup() {
                  "вложенной папке (bestiary_index.jsonl\n"
                  "должен быть на самом верхнем уровне).",
                  (unsigned)App.bestiary.count(), (unsigned)App.spells.count());
-        lv_obj_t *scr = lv_obj_create(NULL);
+        lv_obj_t *scr = ui_new_screen();
         lv_obj_t *lbl = lv_label_create(scr);
         lv_label_set_text(lbl, buf);
         lv_label_set_long_mode(lbl, LV_LABEL_LONG_WRAP);

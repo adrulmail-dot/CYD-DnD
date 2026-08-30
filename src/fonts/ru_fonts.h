@@ -9,3 +9,9 @@ LV_FONT_DECLARE(ru_font_12)
 LV_FONT_DECLARE(ru_font_14)
 LV_FONT_DECLARE(ru_font_16)
 LV_FONT_DECLARE(ru_font_18)
+
+// Retro "Press Start 2P" pixel font, same Cyrillic+symbol coverage. Reserved
+// for short, bounded strings only (stat numbers, CR/level badges) - measured
+// ~1.6x wider per glyph than ru_font_* at the same size, so it overflows
+// labels, nav bar text and anything else of variable/unbounded length.
+LV_FONT_DECLARE(ru_pixel_14)

@@ -13,19 +13,88 @@ lv_style_t style_dim;
 static lv_obj_t *cached[SCREEN_SPELLS + 1] = {nullptr};
 static lv_obj_t *detail_screen = nullptr; // current bestiary/spell detail, rebuilt each time
 
+void ui_apply_dark_theme(lv_disp_t *disp) {
+    lv_theme_t *th = lv_theme_default_init(disp, lv_color_hex(UI_COLOR_AMBER), lv_color_hex(UI_COLOR_BLUE),
+                                            true, &ru_font_14);
+    lv_disp_set_theme(disp, th);
+}
+
+lv_obj_t *ui_new_screen() {
+    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_set_style_bg_color(scr, lv_color_hex(UI_COLOR_BG), 0);
+    return scr;
+}
+
 void ui_init_styles() {
     lv_style_init(&style_card);
-    lv_style_set_bg_color(&style_card, lv_color_white());
-    lv_style_set_radius(&style_card, 6);
-    lv_style_set_border_width(&style_card, 1);
-    lv_style_set_border_color(&style_card, lv_palette_main(LV_PALETTE_GREY));
+    lv_style_set_bg_color(&style_card, lv_color_hex(UI_COLOR_PANEL));
+    lv_style_set_radius(&style_card, 8);
+    lv_style_set_border_width(&style_card, 2);
+    lv_style_set_border_color(&style_card, lv_color_hex(UI_COLOR_BORDER));
     lv_style_set_pad_all(&style_card, 6);
 
     lv_style_init(&style_title);
     lv_style_set_text_font(&style_title, &ru_font_18);
+    lv_style_set_text_color(&style_title, lv_color_hex(UI_COLOR_AMBER));
 
     lv_style_init(&style_dim);
-    lv_style_set_text_color(&style_dim, lv_palette_main(LV_PALETTE_GREY));
+    lv_style_set_text_color(&style_dim, lv_color_hex(UI_COLOR_TEXT_DIM));
+}
+
+void ui_style_panel(lv_obj_t *obj, lv_color_t accent) {
+    lv_obj_set_style_bg_color(obj, lv_color_hex(UI_COLOR_PANEL), 0);
+    lv_obj_set_style_bg_opa(obj, LV_OPA_COVER, 0);
+    lv_obj_set_style_radius(obj, 8, 0);
+    lv_obj_set_style_border_width(obj, 2, 0);
+    lv_obj_set_style_border_color(obj, accent, 0);
+    lv_obj_set_style_shadow_width(obj, 8, 0);
+    lv_obj_set_style_shadow_ofs_x(obj, 2, 0);
+    lv_obj_set_style_shadow_ofs_y(obj, 2, 0);
+    lv_obj_set_style_shadow_color(obj, lv_color_black(), 0);
+    lv_obj_set_style_shadow_opa(obj, LV_OPA_40, 0);
+}
+
+lv_obj_t *ui_make_badge(lv_obj_t *parent, const char *text, lv_color_t accent) {
+    lv_obj_t *badge = lv_obj_create(parent);
+    lv_obj_remove_style_all(badge);
+    lv_obj_set_size(badge, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+    lv_obj_set_style_bg_color(badge, accent, 0);
+    lv_obj_set_style_bg_opa(badge, LV_OPA_30, 0);
+    lv_obj_set_style_border_width(badge, 1, 0);
+    lv_obj_set_style_border_color(badge, accent, 0);
+    lv_obj_set_style_radius(badge, 10, 0);
+    lv_obj_set_style_pad_hor(badge, 8, 0);
+    lv_obj_set_style_pad_ver(badge, 3, 0);
+    lv_obj_clear_flag(badge, LV_OBJ_FLAG_SCROLLABLE);
+
+    lv_obj_t *lbl = lv_label_create(badge);
+    lv_label_set_text(lbl, text);
+    lv_obj_set_style_text_font(lbl, &ru_font_12, 0);
+    lv_obj_set_style_text_color(lbl, accent, 0);
+    return badge;
+}
+
+lv_obj_t *ui_make_stat_tile(lv_obj_t *parent, const char *label, const char *value, lv_color_t accent) {
+    lv_obj_t *tile = lv_obj_create(parent);
+    lv_obj_remove_style_all(tile);
+    lv_obj_set_size(tile, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+    ui_style_panel(tile, lv_color_hex(UI_COLOR_BORDER));
+    lv_obj_set_style_pad_all(tile, 6, 0);
+    lv_obj_set_flex_flow(tile, LV_FLEX_FLOW_COLUMN);
+    lv_obj_set_flex_align(tile, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    lv_obj_clear_flag(tile, LV_OBJ_FLAG_SCROLLABLE);
+
+    lv_obj_t *lblLabel = lv_label_create(tile);
+    lv_label_set_text(lblLabel, label);
+    lv_obj_set_style_text_font(lblLabel, &ru_font_12, 0);
+    lv_obj_add_style(lblLabel, &style_dim, 0);
+
+    lv_obj_t *lblValue = lv_label_create(tile);
+    lv_label_set_text(lblValue, value);
+    lv_obj_set_style_text_font(lblValue, &ru_pixel_14, 0);
+    lv_obj_set_style_text_color(lblValue, accent, 0);
+
+    return tile;
 }
 
 void ui_add_nav_bar(lv_obj_t *parent) {

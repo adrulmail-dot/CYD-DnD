@@ -45,7 +45,7 @@ static void refresh_bestiary_list(lv_obj_t *list, const String &query, const Str
 }
 
 lv_obj_t *screen_bestiary_list_create() {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_flex_flow(scr, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_style_pad_all(scr, 4, 0);
     lv_obj_set_style_pad_row(scr, 4, 0);
@@ -129,7 +129,7 @@ static String formatAbility(const char *name, int score) {
 }
 
 lv_obj_t *screen_bestiary_detail_create(const String &slug) {
-    lv_obj_t *scr = lv_obj_create(NULL);
+    lv_obj_t *scr = ui_new_screen();
     lv_obj_set_style_pad_all(scr, 0, 0);
 
     StatBlock sb;
@@ -166,7 +166,7 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
         lv_obj_center(img);
         img_loader_attach_cleanup(img, dsc);
     } else {
-        lv_obj_set_style_bg_color(thumb, lv_palette_main(LV_PALETTE_INDIGO), 0);
+        lv_obj_set_style_bg_color(thumb, lv_color_hex(UI_COLOR_RED), 0);
         lv_obj_t *lbl = lv_label_create(thumb);
         lv_label_set_text(lbl, ok && sb.name.length() ? String(sb.name[0]).c_str() : "?");
         lv_obj_set_style_text_color(lbl, lv_color_white(), 0);
@@ -179,8 +179,7 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
     lv_obj_align(nameLbl, LV_ALIGN_LEFT_MID, 84, -10);
 
     lv_obj_t *metaLbl = lv_label_create(header);
-    String meta = ok ? (sb.size + " " + sb.type + (sb.subtype.length() ? " (" + sb.subtype + ")" : "") +
-                        " · CR " + sb.cr + " (" + String(sb.xp) + " XP)") : "";
+    String meta = ok ? (sb.size + " " + sb.type + (sb.subtype.length() ? " (" + sb.subtype + ")" : "")) : "";
     lv_label_set_text(metaLbl, meta.c_str());
     lv_obj_add_style(metaLbl, &style_dim, 0);
     lv_obj_set_style_text_font(metaLbl, &ru_font_12, 0);
@@ -196,9 +195,42 @@ lv_obj_t *screen_bestiary_detail_create(const String &slug) {
     lv_obj_t *tabTips = lv_tabview_add_tab(tv, "Тактика");
 
     if (ok) {
+        lv_obj_set_flex_flow(tabStats, LV_FLEX_FLOW_COLUMN);
+        lv_obj_set_style_pad_row(tabStats, 6, 0);
+
+        lv_obj_t *badgeRow = lv_obj_create(tabStats);
+        lv_obj_remove_style_all(badgeRow);
+        lv_obj_set_size(badgeRow, LV_PCT(100), LV_SIZE_CONTENT);
+        lv_obj_set_flex_flow(badgeRow, LV_FLEX_FLOW_ROW_WRAP);
+        lv_obj_set_style_pad_column(badgeRow, 4, 0);
+        lv_obj_clear_flag(badgeRow, LV_OBJ_FLAG_SCROLLABLE);
+        char crBuf[24];
+        snprintf(crBuf, sizeof(crBuf), "CR %s", sb.cr.c_str());
+        ui_make_badge(badgeRow, crBuf, lv_color_hex(UI_COLOR_AMBER));
+        if (sb.type.length()) ui_make_badge(badgeRow, sb.type.c_str(), lv_color_hex(UI_COLOR_RED));
+
+        lv_obj_t *tileRow = lv_obj_create(tabStats);
+        lv_obj_remove_style_all(tileRow);
+        lv_obj_set_size(tileRow, LV_PCT(100), LV_SIZE_CONTENT);
+        lv_obj_set_flex_flow(tileRow, LV_FLEX_FLOW_ROW_WRAP);
+        lv_obj_set_style_pad_column(tileRow, 4, 0);
+        lv_obj_set_style_pad_row(tileRow, 4, 0);
+        lv_obj_clear_flag(tileRow, LV_OBJ_FLAG_SCROLLABLE);
+        // Tile values must stay short - ru_pixel_14 (~1.6x wider per glyph
+        // than the normal font) overflows a small tile with anything longer
+        // than a couple of digits, so speed (which can be a multi-clause
+        // string like "ходьба 10 фт., плавание 40 фт.") stays regular text
+        // below instead of becoming a tile.
+        char hpBuf[16], acBuf[16], xpBuf[16];
+        snprintf(hpBuf, sizeof(hpBuf), "%d", sb.hp);
+        snprintf(acBuf, sizeof(acBuf), "%d", sb.ac);
+        snprintf(xpBuf, sizeof(xpBuf), "%d", sb.xp);
+        ui_make_stat_tile(tileRow, "ХП", hpBuf, lv_color_hex(UI_COLOR_GREEN));
+        ui_make_stat_tile(tileRow, "КД", acBuf, lv_color_hex(UI_COLOR_BLUE));
+        ui_make_stat_tile(tileRow, "Опыт", xpBuf, lv_color_hex(UI_COLOR_AMBER));
+
         String stats;
-        stats += "КД: " + String(sb.ac) + (sb.armorDesc.length() ? " (" + sb.armorDesc + ")" : "") + "\n";
-        stats += "ХП: " + String(sb.hp) + " (" + sb.hitDice + ")\n";
+        stats += "Хиты: " + sb.hitDice + (sb.armorDesc.length() ? "  ·  Доспех: " + sb.armorDesc : "") + "\n";
         stats += "Скорость: " + sb.speed + "\n";
         stats += "Мировоззрение: " + sb.alignment + "\n\n";
         stats += formatAbility("STR", sb.str) + "   " + formatAbility("DEX", sb.dex) + "   " + formatAbility("CON", sb.con) + "\n";
