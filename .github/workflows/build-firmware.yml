@@ -1,0 +1,64 @@
+name: Build and publish firmware
+
+# Builds the firmware on GitHub's runners (which have full internet access,
+# unlike the sandbox this project was originally authored in) and publishes
+# a browser-based installer, so flashing the board never requires installing
+# PlatformIO or typing a build command by hand:
+#   1. Push to the repo (or run this workflow manually).
+#   2. Once green, open the GitHub Pages URL for this repo (enable it once
+#      under Settings -> Pages -> Source: "Deploy from a branch" -> gh-pages).
+#   3. Click "Установить прошивку" in Chrome/Edge, pick the board's serial
+#      port, done - no local toolchain needed.
+# A plain .bin download is also attached to every run under Actions ->
+# (this run) -> Artifacts, for anyone who prefers esptool/PlatformIO locally.
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PlatformIO
+        run: pip install -U platformio
+
+      - name: Build firmware
+        run: pio run
+
+      - name: Collect flashable binaries
+        run: |
+          set -e
+          mkdir -p web-installer
+          ENV_DIR=.pio/build/cyd-esp32-2432s028
+          cp "$ENV_DIR/firmware.bin" web-installer/
+          cp "$ENV_DIR/bootloader.bin" web-installer/
+          cp "$ENV_DIR/partitions.bin" web-installer/
+          BOOT_APP0=$(find ~/.platformio -name boot_app0.bin | head -n1)
+          cp "$BOOT_APP0" web-installer/boot_app0.bin
+          cp tools/web-installer/index.html web-installer/
+          cp tools/web-installer/manifest.json web-installer/
+          ls -la web-installer
+
+      - name: Upload firmware as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyd-dnd-firmware
+          path: web-installer/*.bin
+
+      - name: Publish browser installer to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web-installer
+          publish_branch: gh-pages
