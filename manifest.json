@@ -1,6 +1,6 @@
 {
   "name": "CYD D&D — Бестиарий и трекер заклинаний",
-  "version": "1.0.0",
+  "version": "0.01-beta",
   "new_install_prompt_erase": true,
   "builds": [
     {
