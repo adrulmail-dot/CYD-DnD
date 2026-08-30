@@ -1,0 +1,1 @@
+{"n":"Jump","lvl":1,"school":"Transmutation","cast":"1 action","range":"Touch","comp":{"v":true,"s":true,"m":true,"mat":"A grasshopper's hind leg."},"dur":"1 minute","conc":false,"ritual":false,"classes":"Druid, Ranger, Sorcerer, Wizard","desc":"You touch a creature. The creature's jump distance is tripled until the spell ends.","higher":""}

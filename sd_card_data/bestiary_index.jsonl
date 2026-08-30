@@ -1,0 +1,322 @@
+{"s":"aboleth","n":"Aboleth","ty":"Aberration","cr":"10","sz":"Large","img":"aboleth"}
+{"s":"acolyte","n":"Acolyte","ty":"Humanoid","cr":"1/4","sz":"Medium","img":""}
+{"s":"adult-black-dragon","n":"Adult Black Dragon","ty":"Dragon","cr":"14","sz":"Huge","img":""}
+{"s":"adult-blue-dragon","n":"Adult Blue Dragon","ty":"Dragon","cr":"16","sz":"Huge","img":""}
+{"s":"adult-brass-dragon","n":"Adult Brass Dragon","ty":"Dragon","cr":"13","sz":"Huge","img":""}
+{"s":"adult-bronze-dragon","n":"Adult Bronze Dragon","ty":"Dragon","cr":"15","sz":"Huge","img":""}
+{"s":"adult-copper-dragon","n":"Adult Copper Dragon","ty":"Dragon","cr":"14","sz":"Huge","img":""}
+{"s":"adult-gold-dragon","n":"Adult Gold Dragon","ty":"Dragon","cr":"17","sz":"Huge","img":""}
+{"s":"adult-green-dragon","n":"Adult Green Dragon","ty":"Dragon","cr":"15","sz":"Huge","img":""}
+{"s":"adult-red-dragon","n":"Adult Red Dragon","ty":"Dragon","cr":"17","sz":"Huge","img":""}
+{"s":"adult-silver-dragon","n":"Adult Silver Dragon","ty":"Dragon","cr":"16","sz":"Huge","img":""}
+{"s":"adult-white-dragon","n":"Adult White Dragon","ty":"Dragon","cr":"13","sz":"Huge","img":""}
+{"s":"air-elemental","n":"Air Elemental","ty":"Elemental","cr":"5","sz":"Large","img":""}
+{"s":"ancient-black-dragon","n":"Ancient Black Dragon","ty":"Dragon","cr":"21","sz":"Gargantuan","img":""}
+{"s":"ancient-blue-dragon","n":"Ancient Blue Dragon","ty":"Dragon","cr":"23","sz":"Gargantuan","img":""}
+{"s":"ancient-brass-dragon","n":"Ancient Brass Dragon","ty":"Dragon","cr":"20","sz":"Gargantuan","img":""}
+{"s":"ancient-bronze-dragon","n":"Ancient Bronze Dragon","ty":"Dragon","cr":"22","sz":"Gargantuan","img":""}
+{"s":"ancient-copper-dragon","n":"Ancient Copper Dragon","ty":"Dragon","cr":"21","sz":"Gargantuan","img":""}
+{"s":"ancient-gold-dragon","n":"Ancient Gold Dragon","ty":"Dragon","cr":"24","sz":"Gargantuan","img":""}
+{"s":"ancient-green-dragon","n":"Ancient Green Dragon","ty":"Dragon","cr":"22","sz":"Gargantuan","img":""}
+{"s":"ancient-red-dragon","n":"Ancient Red Dragon","ty":"Dragon","cr":"24","sz":"Gargantuan","img":""}
+{"s":"ancient-silver-dragon","n":"Ancient Silver Dragon","ty":"Dragon","cr":"23","sz":"Gargantuan","img":""}
+{"s":"ancient-white-dragon","n":"Ancient White Dragon","ty":"Dragon","cr":"20","sz":"Gargantuan","img":""}
+{"s":"androsphinx","n":"Androsphinx","ty":"Monstrosity","cr":"17","sz":"Large","img":""}
+{"s":"animated-armor","n":"Animated Armor","ty":"Construct","cr":"1","sz":"Medium","img":""}
+{"s":"ankheg","n":"Ankheg","ty":"Monstrosity","cr":"2","sz":"Large","img":"ankheg"}
+{"s":"ape","n":"Ape","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"archmage","n":"Archmage","ty":"Humanoid","cr":"12","sz":"Medium","img":""}
+{"s":"assassin","n":"Assassin","ty":"Humanoid","cr":"8","sz":"Medium","img":""}
+{"s":"awakened-shrub","n":"Awakened Shrub","ty":"Plant","cr":"0","sz":"Small","img":""}
+{"s":"awakened-tree","n":"Awakened Tree","ty":"Plant","cr":"2","sz":"Huge","img":""}
+{"s":"axe-beak","n":"Axe Beak","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"azer","n":"Azer","ty":"Elemental","cr":"2","sz":"Medium","img":""}
+{"s":"baboon","n":"Baboon","ty":"Beast","cr":"0","sz":"Small","img":""}
+{"s":"badger","n":"Badger","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"balor","n":"Balor","ty":"Fiend","cr":"19","sz":"Huge","img":""}
+{"s":"bandit","n":"Bandit","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"bandit-captain","n":"Bandit Captain","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"barbed-devil","n":"Barbed Devil","ty":"Fiend","cr":"5","sz":"Medium","img":""}
+{"s":"basilisk","n":"Basilisk","ty":"Monstrosity","cr":"3","sz":"Medium","img":"basilisk"}
+{"s":"bat","n":"Bat","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"bearded-devil","n":"Bearded Devil","ty":"Fiend","cr":"3","sz":"Medium","img":""}
+{"s":"behir","n":"Behir","ty":"Monstrosity","cr":"11","sz":"Huge","img":"behir"}
+{"s":"berserker","n":"Berserker","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"black-bear","n":"Black Bear","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"black-dragon-wyrmling","n":"Black Dragon Wyrmling","ty":"Dragon","cr":"2","sz":"Medium","img":""}
+{"s":"black-pudding","n":"Black Pudding","ty":"Ooze","cr":"4","sz":"Large","img":""}
+{"s":"blink-dog","n":"Blink Dog","ty":"Fey","cr":"1/4","sz":"Medium","img":""}
+{"s":"blood-hawk","n":"Blood Hawk","ty":"Beast","cr":"1/8","sz":"Small","img":""}
+{"s":"blue-dragon-wyrmling","n":"Blue Dragon Wyrmling","ty":"Dragon","cr":"3","sz":"Medium","img":""}
+{"s":"boar","n":"Boar","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"bone-devil","n":"Bone Devil","ty":"Fiend","cr":"9","sz":"Large","img":""}
+{"s":"brass-dragon-wyrmling","n":"Brass Dragon Wyrmling","ty":"Dragon","cr":"1","sz":"Medium","img":""}
+{"s":"bronze-dragon-wyrmling","n":"Bronze Dragon Wyrmling","ty":"Dragon","cr":"2","sz":"Medium","img":""}
+{"s":"brown-bear","n":"Brown Bear","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"bugbear","n":"Bugbear","ty":"Humanoid","cr":"1","sz":"Medium","img":""}
+{"s":"bulette","n":"Bulette","ty":"Monstrosity","cr":"5","sz":"Large","img":"bulette"}
+{"s":"camel","n":"Camel","ty":"Beast","cr":"1/8","sz":"Large","img":""}
+{"s":"cat","n":"Cat","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"centaur","n":"Centaur","ty":"Monstrosity","cr":"2","sz":"Large","img":""}
+{"s":"chain-devil","n":"Chain Devil","ty":"Fiend","cr":"11","sz":"Medium","img":""}
+{"s":"chimera","n":"Chimera","ty":"Monstrosity","cr":"6","sz":"Large","img":""}
+{"s":"chuul","n":"Chuul","ty":"Aberration","cr":"4","sz":"Large","img":"chuul"}
+{"s":"clay-golem","n":"Clay Golem","ty":"Construct","cr":"9","sz":"Large","img":""}
+{"s":"cloaker","n":"Cloaker","ty":"Aberration","cr":"8","sz":"Large","img":"cloaker"}
+{"s":"cloud-giant","n":"Cloud Giant","ty":"Giant","cr":"9","sz":"Huge","img":""}
+{"s":"cockatrice","n":"Cockatrice","ty":"Monstrosity","cr":"1/2","sz":"Small","img":"cockatrice"}
+{"s":"commoner","n":"Commoner","ty":"Humanoid","cr":"0","sz":"Medium","img":""}
+{"s":"constrictor-snake","n":"Constrictor Snake","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"copper-dragon-wyrmling","n":"Copper Dragon Wyrmling","ty":"Dragon","cr":"1","sz":"Medium","img":""}
+{"s":"couatl","n":"Couatl","ty":"Celestial","cr":"4","sz":"Medium","img":"couatl"}
+{"s":"crab","n":"Crab","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"crocodile","n":"Crocodile","ty":"Beast","cr":"1/2","sz":"Large","img":""}
+{"s":"cult-fanatic","n":"Cult Fanatic","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"cultist","n":"Cultist","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"darkmantle","n":"Darkmantle","ty":"Monstrosity","cr":"1/2","sz":"Small","img":"darkmantle"}
+{"s":"death-dog","n":"Death Dog","ty":"Monstrosity","cr":"1","sz":"Medium","img":""}
+{"s":"deep-gnome-svirfneblin","n":"Deep Gnome (Svirfneblin)","ty":"Humanoid","cr":"1/2","sz":"Small","img":""}
+{"s":"deer","n":"Deer","ty":"Beast","cr":"0","sz":"Medium","img":""}
+{"s":"deva","n":"Deva","ty":"Celestial","cr":"10","sz":"Medium","img":""}
+{"s":"dire-wolf","n":"Dire Wolf","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"djinni","n":"Djinni","ty":"Elemental","cr":"11","sz":"Large","img":""}
+{"s":"doppelganger","n":"Doppelganger","ty":"Monstrosity","cr":"3","sz":"Medium","img":""}
+{"s":"draft-horse","n":"Draft Horse","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"dragon-turtle","n":"Dragon Turtle","ty":"Dragon","cr":"17","sz":"Gargantuan","img":""}
+{"s":"dretch","n":"Dretch","ty":"Fiend","cr":"1/4","sz":"Small","img":""}
+{"s":"drider","n":"Drider","ty":"Monstrosity","cr":"6","sz":"Large","img":""}
+{"s":"drow","n":"Drow","ty":"Humanoid","cr":"1/4","sz":"Medium","img":""}
+{"s":"druid","n":"Druid","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"dryad","n":"Dryad","ty":"Fey","cr":"1","sz":"Medium","img":""}
+{"s":"duergar","n":"Duergar","ty":"Humanoid","cr":"1","sz":"Medium","img":""}
+{"s":"dust-mephit","n":"Dust Mephit","ty":"Elemental","cr":"1/2","sz":"Small","img":""}
+{"s":"eagle","n":"Eagle","ty":"Beast","cr":"0","sz":"Small","img":""}
+{"s":"earth-elemental","n":"Earth Elemental","ty":"Elemental","cr":"5","sz":"Large","img":""}
+{"s":"efreeti","n":"Efreeti","ty":"Elemental","cr":"11","sz":"Large","img":""}
+{"s":"elephant","n":"Elephant","ty":"Beast","cr":"4","sz":"Huge","img":""}
+{"s":"elk","n":"Elk","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"erinyes","n":"Erinyes","ty":"Fiend","cr":"12","sz":"Medium","img":""}
+{"s":"ettercap","n":"Ettercap","ty":"Monstrosity","cr":"2","sz":"Medium","img":""}
+{"s":"ettin","n":"Ettin","ty":"Giant","cr":"4","sz":"Large","img":""}
+{"s":"fire-elemental","n":"Fire Elemental","ty":"Elemental","cr":"5","sz":"Large","img":""}
+{"s":"fire-giant","n":"Fire Giant","ty":"Giant","cr":"9","sz":"Huge","img":""}
+{"s":"flesh-golem","n":"Flesh Golem","ty":"Construct","cr":"5","sz":"Medium","img":""}
+{"s":"flying-snake","n":"Flying Snake","ty":"Beast","cr":"1/8","sz":"Tiny","img":""}
+{"s":"flying-sword","n":"Flying Sword","ty":"Construct","cr":"1/4","sz":"Small","img":""}
+{"s":"frog","n":"Frog","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"frost-giant","n":"Frost Giant","ty":"Giant","cr":"8","sz":"Huge","img":""}
+{"s":"gargoyle","n":"Gargoyle","ty":"Elemental","cr":"2","sz":"Medium","img":""}
+{"s":"gelatinous-cube","n":"Gelatinous Cube","ty":"Ooze","cr":"2","sz":"Large","img":""}
+{"s":"ghast","n":"Ghast","ty":"Undead","cr":"2","sz":"Medium","img":""}
+{"s":"ghost","n":"Ghost","ty":"Undead","cr":"4","sz":"Medium","img":""}
+{"s":"ghoul","n":"Ghoul","ty":"Undead","cr":"1","sz":"Medium","img":""}
+{"s":"giant-ape","n":"Giant Ape","ty":"Beast","cr":"7","sz":"Huge","img":""}
+{"s":"giant-badger","n":"Giant Badger","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"giant-bat","n":"Giant Bat","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"giant-boar","n":"Giant Boar","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"giant-centipede","n":"Giant Centipede","ty":"Beast","cr":"1/4","sz":"Small","img":""}
+{"s":"giant-constrictor-snake","n":"Giant Constrictor Snake","ty":"Beast","cr":"2","sz":"Huge","img":""}
+{"s":"giant-crab","n":"Giant Crab","ty":"Beast","cr":"1/8","sz":"Medium","img":""}
+{"s":"giant-crocodile","n":"Giant Crocodile","ty":"Beast","cr":"5","sz":"Huge","img":""}
+{"s":"giant-eagle","n":"Giant Eagle","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-elk","n":"Giant Elk","ty":"Beast","cr":"2","sz":"Huge","img":""}
+{"s":"giant-fire-beetle","n":"Giant Fire Beetle","ty":"Beast","cr":"0","sz":"Small","img":""}
+{"s":"giant-frog","n":"Giant Frog","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"giant-goat","n":"Giant Goat","ty":"Beast","cr":"1/2","sz":"Large","img":""}
+{"s":"giant-hyena","n":"Giant Hyena","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-lizard","n":"Giant Lizard","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"giant-octopus","n":"Giant Octopus","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-owl","n":"Giant Owl","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"giant-poisonous-snake","n":"Giant Poisonous Snake","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"giant-rat","n":"Giant Rat","ty":"Beast","cr":"1/8","sz":"Small","img":""}
+{"s":"giant-rat-diseased","n":"Giant Rat (Diseased)","ty":"Beast","cr":"1/8","sz":"Small","img":""}
+{"s":"giant-scorpion","n":"Giant Scorpion","ty":"Beast","cr":"3","sz":"Large","img":""}
+{"s":"giant-sea-horse","n":"Giant Sea Horse","ty":"Beast","cr":"1/2","sz":"Large","img":""}
+{"s":"giant-shark","n":"Giant Shark","ty":"Beast","cr":"5","sz":"Huge","img":""}
+{"s":"giant-spider","n":"Giant Spider","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-toad","n":"Giant Toad","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-vulture","n":"Giant Vulture","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"giant-wasp","n":"Giant Wasp","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"giant-weasel","n":"Giant Weasel","ty":"Beast","cr":"1/8","sz":"Medium","img":""}
+{"s":"giant-wolf-spider","n":"Giant Wolf Spider","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"gibbering-mouther","n":"Gibbering Mouther","ty":"Aberration","cr":"2","sz":"Medium","img":""}
+{"s":"glabrezu","n":"Glabrezu","ty":"Fiend","cr":"9","sz":"Large","img":""}
+{"s":"gladiator","n":"Gladiator","ty":"Humanoid","cr":"5","sz":"Medium","img":""}
+{"s":"gnoll","n":"Gnoll","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"goat","n":"Goat","ty":"Beast","cr":"0","sz":"Medium","img":""}
+{"s":"goblin","n":"Goblin","ty":"Humanoid","cr":"1/4","sz":"Small","img":""}
+{"s":"gold-dragon-wyrmling","n":"Gold Dragon Wyrmling","ty":"Dragon","cr":"3","sz":"Medium","img":""}
+{"s":"gorgon","n":"Gorgon","ty":"Monstrosity","cr":"5","sz":"Large","img":""}
+{"s":"gray-ooze","n":"Gray Ooze","ty":"Ooze","cr":"1/2","sz":"Medium","img":""}
+{"s":"green-dragon-wyrmling","n":"Green Dragon Wyrmling","ty":"Dragon","cr":"2","sz":"Medium","img":""}
+{"s":"green-hag","n":"Green Hag","ty":"Fey","cr":"3","sz":"Medium","img":""}
+{"s":"grick","n":"Grick","ty":"Monstrosity","cr":"2","sz":"Medium","img":""}
+{"s":"griffon","n":"Griffon","ty":"Monstrosity","cr":"2","sz":"Large","img":""}
+{"s":"grimlock","n":"Grimlock","ty":"Humanoid","cr":"1/4","sz":"Medium","img":""}
+{"s":"guard","n":"Guard","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"guardian-naga","n":"Guardian Naga","ty":"Monstrosity","cr":"10","sz":"Large","img":""}
+{"s":"gynosphinx","n":"Gynosphinx","ty":"Monstrosity","cr":"11","sz":"Large","img":""}
+{"s":"half-red-dragon-veteran","n":"Half-Red Dragon Veteran","ty":"Humanoid","cr":"5","sz":"Medium","img":""}
+{"s":"harpy","n":"Harpy","ty":"Monstrosity","cr":"1","sz":"Medium","img":""}
+{"s":"hawk","n":"Hawk","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"hell-hound","n":"Hell Hound","ty":"Fiend","cr":"3","sz":"Medium","img":""}
+{"s":"hezrou","n":"Hezrou","ty":"Fiend","cr":"8","sz":"Large","img":"hezrou"}
+{"s":"hill-giant","n":"Hill Giant","ty":"Giant","cr":"5","sz":"Huge","img":""}
+{"s":"hippogriff","n":"Hippogriff","ty":"Monstrosity","cr":"1","sz":"Large","img":""}
+{"s":"hobgoblin","n":"Hobgoblin","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"homunculus","n":"Homunculus","ty":"Construct","cr":"0","sz":"Tiny","img":""}
+{"s":"horned-devil","n":"Horned Devil","ty":"Fiend","cr":"11","sz":"Large","img":""}
+{"s":"hunter-shark","n":"Hunter Shark","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"hydra","n":"Hydra","ty":"Monstrosity","cr":"8","sz":"Huge","img":""}
+{"s":"hyena","n":"Hyena","ty":"Beast","cr":"0","sz":"Medium","img":""}
+{"s":"ice-devil","n":"Ice Devil","ty":"Fiend","cr":"14","sz":"Large","img":""}
+{"s":"ice-mephit","n":"Ice Mephit","ty":"Elemental","cr":"1/2","sz":"Small","img":""}
+{"s":"imp","n":"Imp","ty":"Fiend","cr":"1","sz":"Tiny","img":""}
+{"s":"invisible-stalker","n":"Invisible Stalker","ty":"Elemental","cr":"6","sz":"Medium","img":""}
+{"s":"iron-golem","n":"Iron Golem","ty":"Construct","cr":"16","sz":"Large","img":""}
+{"s":"jackal","n":"Jackal","ty":"Beast","cr":"0","sz":"Small","img":""}
+{"s":"killer-whale","n":"Killer Whale","ty":"Beast","cr":"3","sz":"Huge","img":""}
+{"s":"knight","n":"Knight","ty":"Humanoid","cr":"3","sz":"Medium","img":""}
+{"s":"kobold","n":"Kobold","ty":"Humanoid","cr":"1/8","sz":"Small","img":""}
+{"s":"kraken","n":"Kraken","ty":"Monstrosity","cr":"23","sz":"Gargantuan","img":""}
+{"s":"lamia","n":"Lamia","ty":"Monstrosity","cr":"4","sz":"Large","img":""}
+{"s":"lemure","n":"Lemure","ty":"Fiend","cr":"0","sz":"Medium","img":""}
+{"s":"lich","n":"Lich","ty":"Undead","cr":"21","sz":"Medium","img":""}
+{"s":"lion","n":"Lion","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"lizard","n":"Lizard","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"lizardfolk","n":"Lizardfolk","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"mage","n":"Mage","ty":"Humanoid","cr":"6","sz":"Medium","img":""}
+{"s":"magma-mephit","n":"Magma Mephit","ty":"Elemental","cr":"1/2","sz":"Small","img":""}
+{"s":"magmin","n":"Magmin","ty":"Elemental","cr":"1/2","sz":"Small","img":""}
+{"s":"mammoth","n":"Mammoth","ty":"Beast","cr":"6","sz":"Huge","img":""}
+{"s":"manticore","n":"Manticore","ty":"Monstrosity","cr":"3","sz":"Large","img":""}
+{"s":"marilith","n":"Marilith","ty":"Fiend","cr":"16","sz":"Large","img":""}
+{"s":"mastiff","n":"Mastiff","ty":"Beast","cr":"1/8","sz":"Medium","img":""}
+{"s":"medusa","n":"Medusa","ty":"Monstrosity","cr":"6","sz":"Medium","img":""}
+{"s":"merfolk","n":"Merfolk","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"merrow","n":"Merrow","ty":"Monstrosity","cr":"2","sz":"Large","img":""}
+{"s":"mimic","n":"Mimic","ty":"Monstrosity","cr":"2","sz":"Medium","img":""}
+{"s":"minotaur","n":"Minotaur","ty":"Monstrosity","cr":"3","sz":"Large","img":""}
+{"s":"minotaur-skeleton","n":"Minotaur Skeleton","ty":"Undead","cr":"2","sz":"Large","img":""}
+{"s":"mule","n":"Mule","ty":"Beast","cr":"1/8","sz":"Medium","img":""}
+{"s":"mummy","n":"Mummy","ty":"Undead","cr":"3","sz":"Medium","img":""}
+{"s":"mummy-lord","n":"Mummy Lord","ty":"Undead","cr":"15","sz":"Medium","img":""}
+{"s":"nalfeshnee","n":"Nalfeshnee","ty":"Fiend","cr":"13","sz":"Large","img":""}
+{"s":"night-hag","n":"Night Hag","ty":"Fiend","cr":"5","sz":"Medium","img":""}
+{"s":"nightmare","n":"Nightmare","ty":"Fiend","cr":"3","sz":"Large","img":""}
+{"s":"noble","n":"Noble","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"ochre-jelly","n":"Ochre Jelly","ty":"Ooze","cr":"2","sz":"Large","img":""}
+{"s":"octopus","n":"Octopus","ty":"Beast","cr":"0","sz":"Small","img":""}
+{"s":"ogre","n":"Ogre","ty":"Giant","cr":"2","sz":"Large","img":""}
+{"s":"ogre-zombie","n":"Ogre Zombie","ty":"Undead","cr":"2","sz":"Large","img":""}
+{"s":"oni","n":"Oni","ty":"Giant","cr":"7","sz":"Large","img":""}
+{"s":"orc","n":"Orc","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"otyugh","n":"Otyugh","ty":"Aberration","cr":"5","sz":"Large","img":""}
+{"s":"owl","n":"Owl","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"owlbear","n":"Owlbear","ty":"Monstrosity","cr":"3","sz":"Large","img":""}
+{"s":"panther","n":"Panther","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"pegasus","n":"Pegasus","ty":"Celestial","cr":"2","sz":"Large","img":""}
+{"s":"phase-spider","n":"Phase Spider","ty":"Monstrosity","cr":"3","sz":"Large","img":""}
+{"s":"pit-fiend","n":"Pit Fiend","ty":"Fiend","cr":"20","sz":"Large","img":""}
+{"s":"planetar","n":"Planetar","ty":"Celestial","cr":"16","sz":"Large","img":""}
+{"s":"plesiosaurus","n":"Plesiosaurus","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"poisonous-snake","n":"Poisonous Snake","ty":"Beast","cr":"1/8","sz":"Tiny","img":""}
+{"s":"polar-bear","n":"Polar Bear","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"pony","n":"Pony","ty":"Beast","cr":"1/8","sz":"Medium","img":""}
+{"s":"priest","n":"Priest","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"pseudodragon","n":"Pseudodragon","ty":"Dragon","cr":"1/4","sz":"Tiny","img":""}
+{"s":"purple-worm","n":"Purple Worm","ty":"Monstrosity","cr":"15","sz":"Gargantuan","img":""}
+{"s":"quasit","n":"Quasit","ty":"Fiend","cr":"1","sz":"Tiny","img":""}
+{"s":"quipper","n":"Quipper","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"rakshasa","n":"Rakshasa","ty":"Fiend","cr":"13","sz":"Medium","img":""}
+{"s":"rat","n":"Rat","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"raven","n":"Raven","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"red-dragon-wyrmling","n":"Red Dragon Wyrmling","ty":"Dragon","cr":"4","sz":"Medium","img":""}
+{"s":"reef-shark","n":"Reef Shark","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"remorhaz","n":"Remorhaz","ty":"Monstrosity","cr":"11","sz":"Huge","img":""}
+{"s":"rhinoceros","n":"Rhinoceros","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"riding-horse","n":"Riding Horse","ty":"Beast","cr":"1/4","sz":"Large","img":""}
+{"s":"roc","n":"Roc","ty":"Monstrosity","cr":"11","sz":"Gargantuan","img":""}
+{"s":"roper","n":"Roper","ty":"Monstrosity","cr":"5","sz":"Large","img":""}
+{"s":"rug-of-smothering","n":"Rug of Smothering","ty":"Construct","cr":"2","sz":"Large","img":""}
+{"s":"rust-monster","n":"Rust Monster","ty":"Monstrosity","cr":"1/2","sz":"Medium","img":"rust-monster"}
+{"s":"saber-toothed-tiger","n":"Saber-Toothed Tiger","ty":"Beast","cr":"2","sz":"Large","img":""}
+{"s":"sahuagin","n":"Sahuagin","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"salamander","n":"Salamander","ty":"Elemental","cr":"5","sz":"Large","img":""}
+{"s":"satyr","n":"Satyr","ty":"Fey","cr":"1/2","sz":"Medium","img":""}
+{"s":"scorpion","n":"Scorpion","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"scout","n":"Scout","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"sea-hag","n":"Sea Hag","ty":"Fey","cr":"2","sz":"Medium","img":""}
+{"s":"sea-horse","n":"Sea Horse","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"shadow","n":"Shadow","ty":"Undead","cr":"1/2","sz":"Medium","img":""}
+{"s":"shambling-mound","n":"Shambling Mound","ty":"Plant","cr":"5","sz":"Large","img":""}
+{"s":"shield-guardian","n":"Shield Guardian","ty":"Construct","cr":"7","sz":"Large","img":""}
+{"s":"shrieker","n":"Shrieker","ty":"Plant","cr":"0","sz":"Medium","img":""}
+{"s":"silver-dragon-wyrmling","n":"Silver Dragon Wyrmling","ty":"Dragon","cr":"2","sz":"Medium","img":""}
+{"s":"skeleton","n":"Skeleton","ty":"Undead","cr":"1/4","sz":"Medium","img":""}
+{"s":"solar","n":"Solar","ty":"Celestial","cr":"21","sz":"Large","img":""}
+{"s":"specter","n":"Specter","ty":"Undead","cr":"1","sz":"Medium","img":""}
+{"s":"spider","n":"Spider","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"spirit-naga","n":"Spirit Naga","ty":"Monstrosity","cr":"8","sz":"Large","img":""}
+{"s":"sprite","n":"Sprite","ty":"Fey","cr":"1/4","sz":"Tiny","img":""}
+{"s":"spy","n":"Spy","ty":"Humanoid","cr":"1","sz":"Medium","img":""}
+{"s":"steam-mephit","n":"Steam Mephit","ty":"Elemental","cr":"1/4","sz":"Small","img":""}
+{"s":"stirge","n":"Stirge","ty":"Beast","cr":"1/8","sz":"Tiny","img":""}
+{"s":"stone-giant","n":"Stone Giant","ty":"Giant","cr":"7","sz":"Huge","img":""}
+{"s":"stone-golem","n":"Stone Golem","ty":"Construct","cr":"10","sz":"Large","img":""}
+{"s":"storm-giant","n":"Storm Giant","ty":"Giant","cr":"13","sz":"Huge","img":""}
+{"s":"succubusincubus","n":"Succubus/Incubus","ty":"Fiend","cr":"4","sz":"Medium","img":""}
+{"s":"swarm-of-bats","n":"Swarm of Bats","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"swarm-of-beetles","n":"Swarm of Beetles","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"swarm-of-centipedes","n":"Swarm of Centipedes","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"swarm-of-insects","n":"Swarm of Insects","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"swarm-of-poisonous-snakes","n":"Swarm of Poisonous Snakes","ty":"Beast","cr":"2","sz":"Medium","img":""}
+{"s":"swarm-of-quippers","n":"Swarm of Quippers","ty":"Beast","cr":"1","sz":"Medium","img":""}
+{"s":"swarm-of-rats","n":"Swarm of Rats","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"swarm-of-ravens","n":"Swarm of Ravens","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"swarm-of-spiders","n":"Swarm of Spiders","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"swarm-of-wasps","n":"Swarm of Wasps","ty":"Beast","cr":"1/2","sz":"Medium","img":""}
+{"s":"tarrasque","n":"Tarrasque","ty":"Monstrosity","cr":"30","sz":"Gargantuan","img":""}
+{"s":"thug","n":"Thug","ty":"Humanoid","cr":"1/2","sz":"Medium","img":""}
+{"s":"tiger","n":"Tiger","ty":"Beast","cr":"1","sz":"Large","img":""}
+{"s":"treant","n":"Treant","ty":"Plant","cr":"9","sz":"Huge","img":""}
+{"s":"tribal-warrior","n":"Tribal Warrior","ty":"Humanoid","cr":"1/8","sz":"Medium","img":""}
+{"s":"triceratops","n":"Triceratops","ty":"Beast","cr":"5","sz":"Huge","img":""}
+{"s":"troll","n":"Troll","ty":"Giant","cr":"5","sz":"Large","img":""}
+{"s":"tyrannosaurus-rex","n":"Tyrannosaurus Rex","ty":"Beast","cr":"8","sz":"Huge","img":""}
+{"s":"unicorn","n":"Unicorn","ty":"Celestial","cr":"5","sz":"Large","img":""}
+{"s":"vampire","n":"Vampire","ty":"Undead","cr":"13","sz":"Medium","img":""}
+{"s":"vampire-spawn","n":"Vampire Spawn","ty":"Undead","cr":"5","sz":"Medium","img":""}
+{"s":"veteran","n":"Veteran","ty":"Humanoid","cr":"3","sz":"Medium","img":""}
+{"s":"violet-fungus","n":"Violet Fungus","ty":"Plant","cr":"1/4","sz":"Medium","img":""}
+{"s":"vrock","n":"Vrock","ty":"Fiend","cr":"6","sz":"Large","img":""}
+{"s":"vulture","n":"Vulture","ty":"Beast","cr":"0","sz":"Medium","img":""}
+{"s":"warhorse","n":"Warhorse","ty":"Beast","cr":"1/2","sz":"Large","img":""}
+{"s":"warhorse-skeleton","n":"Warhorse Skeleton","ty":"Undead","cr":"1/2","sz":"Large","img":""}
+{"s":"water-elemental","n":"Water Elemental","ty":"Elemental","cr":"5","sz":"Large","img":""}
+{"s":"weasel","n":"Weasel","ty":"Beast","cr":"0","sz":"Tiny","img":""}
+{"s":"werebear","n":"Werebear","ty":"Humanoid","cr":"5","sz":"Medium","img":""}
+{"s":"wereboar","n":"Wereboar","ty":"Humanoid","cr":"4","sz":"Medium","img":""}
+{"s":"wererat","n":"Wererat","ty":"Humanoid","cr":"2","sz":"Medium","img":""}
+{"s":"weretiger","n":"Weretiger","ty":"Humanoid","cr":"4","sz":"Medium","img":""}
+{"s":"werewolf","n":"Werewolf","ty":"Humanoid","cr":"3","sz":"Medium","img":""}
+{"s":"white-dragon-wyrmling","n":"White Dragon Wyrmling","ty":"Dragon","cr":"2","sz":"Medium","img":""}
+{"s":"wight","n":"Wight","ty":"Undead","cr":"3","sz":"Medium","img":""}
+{"s":"will-o-wisp","n":"Will-o'-Wisp","ty":"Undead","cr":"2","sz":"Tiny","img":""}
+{"s":"winter-wolf","n":"Winter Wolf","ty":"Monstrosity","cr":"3","sz":"Large","img":""}
+{"s":"wolf","n":"Wolf","ty":"Beast","cr":"1/4","sz":"Medium","img":""}
+{"s":"worg","n":"Worg","ty":"Monstrosity","cr":"1/2","sz":"Large","img":""}
+{"s":"wraith","n":"Wraith","ty":"Undead","cr":"5","sz":"Medium","img":""}
+{"s":"wyvern","n":"Wyvern","ty":"Dragon","cr":"6","sz":"Large","img":""}
+{"s":"xorn","n":"Xorn","ty":"Elemental","cr":"5","sz":"Medium","img":""}
+{"s":"young-black-dragon","n":"Young Black Dragon","ty":"Dragon","cr":"7","sz":"Large","img":""}
+{"s":"young-blue-dragon","n":"Young Blue Dragon","ty":"Dragon","cr":"9","sz":"Large","img":""}
+{"s":"young-brass-dragon","n":"Young Brass Dragon","ty":"Dragon","cr":"6","sz":"Large","img":""}
+{"s":"young-bronze-dragon","n":"Young Bronze Dragon","ty":"Dragon","cr":"8","sz":"Large","img":""}
+{"s":"young-copper-dragon","n":"Young Copper Dragon","ty":"Dragon","cr":"7","sz":"Large","img":""}
+{"s":"young-gold-dragon","n":"Young Gold Dragon","ty":"Dragon","cr":"10","sz":"Large","img":""}
+{"s":"young-green-dragon","n":"Young Green Dragon","ty":"Dragon","cr":"8","sz":"Large","img":""}
+{"s":"young-red-dragon","n":"Young Red Dragon","ty":"Dragon","cr":"10","sz":"Large","img":""}
+{"s":"young-silver-dragon","n":"Young Silver Dragon","ty":"Dragon","cr":"9","sz":"Large","img":""}
+{"s":"young-white-dragon","n":"Young White Dragon","ty":"Dragon","cr":"6","sz":"Large","img":""}
+{"s":"zombie","n":"Zombie","ty":"Undead","cr":"1/4","sz":"Medium","img":""}

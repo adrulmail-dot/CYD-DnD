@@ -1,0 +1,319 @@
+{"s":"acid-splash","n":"Acid Splash","lvl":0,"school":"Conjuration","classes":"Sorcerer, Wizard"}
+{"s":"chill-touch","n":"Chill Touch","lvl":0,"school":"Necromancy","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"dancing-lights","n":"Dancing Lights","lvl":0,"school":"Evocation","classes":"Bard, Sorcerer, Wizard"}
+{"s":"druidcraft","n":"Druidcraft","lvl":0,"school":"Transmutation","classes":"Druid"}
+{"s":"eldritch-blast","n":"Eldritch Blast","lvl":0,"school":"Evocation","classes":"Warlock"}
+{"s":"fire-bolt","n":"Fire Bolt","lvl":0,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"guidance","n":"Guidance","lvl":0,"school":"Divination","classes":"Cleric, Druid"}
+{"s":"light","n":"Light","lvl":0,"school":"Evocation","classes":"Bard, Cleric, Sorcerer, Wizard"}
+{"s":"mage-hand","n":"Mage Hand","lvl":0,"school":"Conjuration","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"mending","n":"Mending","lvl":0,"school":"Transmutation","classes":"Cleric, Bard, Druid, Sorcerer, Wizard"}
+{"s":"message","n":"Message","lvl":0,"school":"Transmutation","classes":"Bard, Sorcerer, Wizard"}
+{"s":"minor-illusion","n":"Minor Illusion","lvl":0,"school":"Illusion","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"poison-spray","n":"Poison Spray","lvl":0,"school":"Conjuration","classes":"Druid, Sorcerer, Warlock, Wizard"}
+{"s":"prestidigitation","n":"Prestidigitation","lvl":0,"school":"Transmutation","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"produce-flame","n":"Produce Flame","lvl":0,"school":"Conjuration","classes":"Druid"}
+{"s":"ray-of-frost","n":"Ray of Frost","lvl":0,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"resistance","n":"Resistance","lvl":0,"school":"Abjuration","classes":"Cleric, Druid"}
+{"s":"sacred-flame","n":"Sacred Flame","lvl":0,"school":"Evocation","classes":"Cleric"}
+{"s":"shillelagh","n":"Shillelagh","lvl":0,"school":"Transmutation","classes":"Druid"}
+{"s":"shocking-grasp","n":"Shocking Grasp","lvl":0,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"spare-the-dying","n":"Spare the Dying","lvl":0,"school":"Necromancy","classes":"Cleric"}
+{"s":"thaumaturgy","n":"Thaumaturgy","lvl":0,"school":"Transmutation","classes":"Cleric"}
+{"s":"true-strike","n":"True Strike","lvl":0,"school":"Divination","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"vicious-mockery","n":"Vicious Mockery","lvl":0,"school":"Enchantment","classes":"Bard"}
+{"s":"alarm","n":"Alarm","lvl":1,"school":"Abjuration","classes":"Ranger, Ritual Caster, Wizard"}
+{"s":"animal-friendship","n":"Animal Friendship","lvl":1,"school":"Enchantment","classes":"Bard, Druid, Ranger, Ritual Caster"}
+{"s":"bane","n":"Bane","lvl":1,"school":"Enchantment","classes":"Bard, Cleric, Paladin"}
+{"s":"bless","n":"Bless","lvl":1,"school":"Enchantment","classes":"Cleric, Paladin"}
+{"s":"burning-hands","n":"Burning Hands","lvl":1,"school":"Evocation","classes":"Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"charm-person","n":"Charm Person","lvl":1,"school":"Enchantment","classes":"Bard, Cleric, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"color-spray","n":"Color Spray","lvl":1,"school":"Illusion","classes":"Sorcerer, Wizard"}
+{"s":"command","n":"Command","lvl":1,"school":"Enchantment","classes":"Cleric, Paladin, Warlock"}
+{"s":"comprehend-languages","n":"Comprehend Languages","lvl":1,"school":"Divination","classes":"Bard, Ritual Caster, Sorcerer, Warlock, Wizard"}
+{"s":"create-or-destroy-water","n":"Create or Destroy Water","lvl":1,"school":"Transmutation","classes":"Cleric, Druid"}
+{"s":"cure-wounds","n":"Cure Wounds","lvl":1,"school":"Evocation","classes":"Bard, Cleric, Druid, Paladin, Ranger"}
+{"s":"detect-evil-and-good","n":"Detect Evil and Good","lvl":1,"school":"Divination","classes":"Cleric, Paladin"}
+{"s":"detect-magic","n":"Detect Magic","lvl":1,"school":"Divination","classes":"Bard, Cleric, Druid, Paladin, Ranger, Ritual Caster, Sorcerer, Wizard"}
+{"s":"detect-poison-and-disease","n":"Detect Poison and Disease","lvl":1,"school":"Divination","classes":"Cleric, Druid, Paladin, Ranger, Ritual Caster"}
+{"s":"disguise-self","n":"Disguise Self","lvl":1,"school":"Illusion","classes":"Bard, Cleric, Sorcerer, Wizard"}
+{"s":"divine-favor","n":"Divine Favor","lvl":1,"school":"Evocation","classes":"Cleric, Paladin"}
+{"s":"entangle","n":"Entangle","lvl":1,"school":"Conjuration","classes":"Druid"}
+{"s":"expeditious-retreat","n":"Expeditious Retreat","lvl":1,"school":"Transmutation","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"faerie-fire","n":"Faerie Fire","lvl":1,"school":"Evocation","classes":"Bard, Cleric, Druid, Warlock"}
+{"s":"false-life","n":"False Life","lvl":1,"school":"Necromancy","classes":"Sorcerer, Wizard"}
+{"s":"feather-fall","n":"Feather Fall","lvl":1,"school":"Transmutation","classes":"Bard, Sorcerer, Wizard"}
+{"s":"find-familiar","n":"Find Familiar","lvl":1,"school":"Conjuration","classes":"Wizard"}
+{"s":"floating-disk","n":"Floating Disk","lvl":1,"school":"Conjuration","classes":"Ritual Caster, Wizard"}
+{"s":"fog-cloud","n":"Fog Cloud","lvl":1,"school":"Conjuration","classes":"Cleric, Druid, Ranger, Sorcerer, Wizard"}
+{"s":"goodberry","n":"Goodberry","lvl":1,"school":"Transmutation","classes":"Druid, Ranger"}
+{"s":"grease","n":"Grease","lvl":1,"school":"Conjuration","classes":"Wizard"}
+{"s":"guiding-bolt","n":"Guiding Bolt","lvl":1,"school":"Evocation","classes":"Cleric"}
+{"s":"healing-word","n":"Healing Word","lvl":1,"school":"Evocation","classes":"Bard, Cleric, Druid"}
+{"s":"hellish-rebuke","n":"Hellish Rebuke","lvl":1,"school":"Evocation","classes":"Paladin, Warlock"}
+{"s":"heroism","n":"Heroism","lvl":1,"school":"Enchantment","classes":"Bard, Paladin"}
+{"s":"hideous-laughter","n":"Hideous Laughter","lvl":1,"school":"Enchantment","classes":"Bard, Warlock, Wizard"}
+{"s":"hunters-mark","n":"Hunter's Mark","lvl":1,"school":"Divination","classes":"Paladin, Ranger"}
+{"s":"identify","n":"Identify","lvl":1,"school":"Divination","classes":"Bard, Cleric, Ritual Caster, Wizard"}
+{"s":"illusory-script","n":"Illusory Script","lvl":1,"school":"Illusion","classes":"Bard, Ritual Caster, Warlock, Wizard"}
+{"s":"inflict-wounds","n":"Inflict Wounds","lvl":1,"school":"Necromancy","classes":"Cleric"}
+{"s":"jump","n":"Jump","lvl":1,"school":"Transmutation","classes":"Druid, Ranger, Sorcerer, Wizard"}
+{"s":"longstrider","n":"Longstrider","lvl":1,"school":"Transmutation","classes":"Bard, Druid, Ranger, Wizard"}
+{"s":"mage-armor","n":"Mage Armor","lvl":1,"school":"Abjuration","classes":"Sorcerer, Wizard"}
+{"s":"magic-missile","n":"Magic Missile","lvl":1,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"protection-from-evil-and-good","n":"Protection from Evil and Good","lvl":1,"school":"Abjuration","classes":"Cleric, Paladin, Warlock, Wizard"}
+{"s":"purify-food-and-drink","n":"Purify Food and Drink","lvl":1,"school":"Transmutation","classes":"Cleric, Druid, Paladin, Ritual Caster"}
+{"s":"sanctuary","n":"Sanctuary","lvl":1,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"shield","n":"Shield","lvl":1,"school":"Abjuration","classes":"Sorcerer, Wizard"}
+{"s":"shield-of-faith","n":"Shield of Faith","lvl":1,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"silent-image","n":"Silent Image","lvl":1,"school":"Illusion","classes":"Bard, Sorcerer, Wizard"}
+{"s":"sleep","n":"Sleep","lvl":1,"school":"Enchantment","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"speak-with-animals","n":"Speak with Animals","lvl":1,"school":"Divination","classes":"Bard, Cleric, Druid, Paladin, Ranger, Ritual Caster"}
+{"s":"thunderwave","n":"Thunderwave","lvl":1,"school":"Evocation","classes":"Bard, Cleric, Druid, Sorcerer, Wizard"}
+{"s":"unseen-servant","n":"Unseen Servant","lvl":1,"school":"Conjuration","classes":"Bard, Ritual Caster, Warlock, Wizard"}
+{"s":"acid-arrow","n":"Acid Arrow","lvl":2,"school":"Evocation","classes":"Druid, Wizard"}
+{"s":"aid","n":"Aid","lvl":2,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"alter-self","n":"Alter Self","lvl":2,"school":"Transmutation","classes":"Sorcerer, Wizard"}
+{"s":"animal-messenger","n":"Animal Messenger","lvl":2,"school":"Enchantment","classes":"Bard, Druid, Ranger, Ritual Caster"}
+{"s":"arcane-lock","n":"Arcane Lock","lvl":2,"school":"Abjuration","classes":"Wizard"}
+{"s":"arcanists-magic-aura","n":"Arcanist's Magic Aura","lvl":2,"school":"Illusion","classes":"Wizard"}
+{"s":"augury","n":"Augury","lvl":2,"school":"Divination","classes":"Cleric, Ritual Caster"}
+{"s":"barkskin","n":"Barkskin","lvl":2,"school":"Transmutation","classes":"Cleric, Druid, Ranger"}
+{"s":"blindnessdeafness","n":"Blindness/Deafness","lvl":2,"school":"Necromancy","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"blur","n":"Blur","lvl":2,"school":"Illusion","classes":"Druid, Sorcerer, Wizard"}
+{"s":"branding-smite","n":"Branding Smite","lvl":2,"school":"Evocation","classes":"Paladin"}
+{"s":"calm-emotions","n":"Calm Emotions","lvl":2,"school":"Enchantment","classes":"Bard, Cleric, Warlock"}
+{"s":"continual-flame","n":"Continual Flame","lvl":2,"school":"Evocation","classes":"Cleric, Wizard"}
+{"s":"darkness","n":"Darkness","lvl":2,"school":"Evocation","classes":"Druid, Sorcerer, Warlock, Wizard"}
+{"s":"darkvision","n":"Darkvision","lvl":2,"school":"Transmutation","classes":"Druid, Ranger, Sorcerer, Wizard"}
+{"s":"detect-thoughts","n":"Detect Thoughts","lvl":2,"school":"Divination","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"enhance-ability","n":"Enhance Ability","lvl":2,"school":"Transmutation","classes":"Bard, Cleric, Druid, Sorcerer"}
+{"s":"enlargereduce","n":"Enlarge/Reduce","lvl":2,"school":"Transmutation","classes":"Sorcerer, Wizard"}
+{"s":"enthrall","n":"Enthrall","lvl":2,"school":"Enchantment","classes":"Bard, Warlock"}
+{"s":"find-steed","n":"Find Steed","lvl":2,"school":"Conjuration","classes":"Paladin"}
+{"s":"find-traps","n":"Find Traps","lvl":2,"school":"Divination","classes":"Cleric, Druid, Ranger"}
+{"s":"flame-blade","n":"Flame Blade","lvl":2,"school":"Evocation","classes":"Druid"}
+{"s":"flaming-sphere","n":"Flaming Sphere","lvl":2,"school":"Conjuration","classes":"Cleric, Druid, Wizard"}
+{"s":"gentle-repose","n":"Gentle Repose","lvl":2,"school":"Necromancy","classes":"Cleric, Ritual Caster, Wizard"}
+{"s":"gust-of-wind","n":"Gust of Wind","lvl":2,"school":"Evocation","classes":"Cleric, Druid, Sorcerer, Wizard"}
+{"s":"heat-metal","n":"Heat Metal","lvl":2,"school":"Transmutation","classes":"Bard, Druid"}
+{"s":"hold-person","n":"Hold Person","lvl":2,"school":"Enchantment","classes":"Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"invisibility","n":"Invisibility","lvl":2,"school":"Illusion","classes":"Bard, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"knock","n":"Knock","lvl":2,"school":"Transmutation","classes":"Bard, Sorcerer, Wizard"}
+{"s":"lesser-restoration","n":"Lesser Restoration","lvl":2,"school":"Abjuration","classes":"Bard, Cleric, Druid, Paladin, Ranger"}
+{"s":"levitate","n":"Levitate","lvl":2,"school":"Transmutation","classes":"Sorcerer, Wizard"}
+{"s":"locate-animals-or-plants","n":"Locate Animals or Plants","lvl":2,"school":"Divination","classes":"Bard, Druid, Ranger, Ritual Caster"}
+{"s":"locate-object","n":"Locate Object","lvl":2,"school":"Divination","classes":"Bard, Cleric, Druid, Paladin, Ranger, Wizard"}
+{"s":"magic-mouth","n":"Magic Mouth","lvl":2,"school":"Illusion","classes":"Bard, Ritual Caster, Wizard"}
+{"s":"magic-weapon","n":"Magic Weapon","lvl":2,"school":"Transmutation","classes":"Cleric, Paladin, Wizard"}
+{"s":"mirror-image","n":"Mirror Image","lvl":2,"school":"Illusion","classes":"Cleric, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"misty-step","n":"Misty Step","lvl":2,"school":"Conjuration","classes":"Druid, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"moonbeam","n":"Moonbeam","lvl":2,"school":"Evocation","classes":"Druid, Paladin"}
+{"s":"pass-without-trace","n":"Pass without Trace","lvl":2,"school":"Abjuration","classes":"Cleric, Druid, Ranger"}
+{"s":"prayer-of-healing","n":"Prayer of Healing","lvl":2,"school":"Evocation","classes":"Cleric"}
+{"s":"protection-from-poison","n":"Protection from Poison","lvl":2,"school":"Abjuration","classes":"Cleric, Druid, Paladin, Ranger"}
+{"s":"ray-of-enfeeblement","n":"Ray of Enfeeblement","lvl":2,"school":"Necromancy","classes":"Warlock, Wizard"}
+{"s":"rope-trick","n":"Rope Trick","lvl":2,"school":"Transmutation","classes":"Wizard"}
+{"s":"scorching-ray","n":"Scorching Ray","lvl":2,"school":"Evocation","classes":"Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"see-invisibility","n":"See Invisibility","lvl":2,"school":"Divination","classes":"Bard, Sorcerer, Wizard"}
+{"s":"shatter","n":"Shatter","lvl":2,"school":"Evocation","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"silence","n":"Silence","lvl":2,"school":"Illusion","classes":"Bard, Cleric, Druid, Ranger, Ritual Caster"}
+{"s":"spider-climb","n":"Spider Climb","lvl":2,"school":"Transmutation","classes":"Druid, Sorcerer, Warlock, Wizard"}
+{"s":"spike-growth","n":"Spike Growth","lvl":2,"school":"Transmutation","classes":"Cleric, Druid, Ranger"}
+{"s":"spiritual-weapon","n":"Spiritual Weapon","lvl":2,"school":"Evocation","classes":"Cleric"}
+{"s":"suggestion","n":"Suggestion","lvl":2,"school":"Enchantment","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"warding-bond","n":"Warding Bond","lvl":2,"school":"Abjuration","classes":"Cleric"}
+{"s":"web","n":"Web","lvl":2,"school":"Conjuration","classes":"Druid, Sorcerer, Wizard"}
+{"s":"zone-of-truth","n":"Zone of Truth","lvl":2,"school":"Enchantment","classes":"Bard, Cleric, Paladin"}
+{"s":"animate-dead","n":"Animate Dead","lvl":3,"school":"Necromancy","classes":"Cleric, Wizard"}
+{"s":"beacon-of-hope","n":"Beacon of Hope","lvl":3,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"bestow-curse","n":"Bestow Curse","lvl":3,"school":"Necromancy","classes":"Bard, Cleric, Wizard"}
+{"s":"blink","n":"Blink","lvl":3,"school":"Transmutation","classes":"Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"call-lightning","n":"Call Lightning","lvl":3,"school":"Conjuration","classes":"Cleric, Druid"}
+{"s":"clairvoyance","n":"Clairvoyance","lvl":3,"school":"Divination","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"conjure-animals","n":"Conjure Animals","lvl":3,"school":"Conjuration","classes":"Druid, Ranger"}
+{"s":"counterspell","n":"Counterspell","lvl":3,"school":"Abjuration","classes":"Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"create-food-and-water","n":"Create Food and Water","lvl":3,"school":"Conjuration","classes":"Cleric, Druid, Paladin"}
+{"s":"daylight","n":"Daylight","lvl":3,"school":"Evocation","classes":"Cleric, Druid, Paladin, Ranger, Sorcerer"}
+{"s":"dispel-magic","n":"Dispel Magic","lvl":3,"school":"Abjuration","classes":"Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"fear","n":"Fear","lvl":3,"school":"Illusion","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"fireball","n":"Fireball","lvl":3,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"fly","n":"Fly","lvl":3,"school":"Transmutation","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"gaseous-form","n":"Gaseous Form","lvl":3,"school":"Transmutation","classes":"Druid, Sorcerer, Warlock, Wizard"}
+{"s":"glyph-of-warding","n":"Glyph of Warding","lvl":3,"school":"Abjuration","classes":"Bard, Cleric, Wizard"}
+{"s":"haste","n":"Haste","lvl":3,"school":"Transmutation","classes":"Druid, Paladin, Sorcerer, Wizard"}
+{"s":"hypnotic-pattern","n":"Hypnotic Pattern","lvl":3,"school":"Illusion","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"lightning-bolt","n":"Lightning Bolt","lvl":3,"school":"Evocation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"magic-circle","n":"Magic Circle","lvl":3,"school":"Abjuration","classes":"Cleric, Paladin, Warlock, Wizard"}
+{"s":"major-image","n":"Major Image","lvl":3,"school":"Illusion","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"mass-healing-word","n":"Mass Healing Word","lvl":3,"school":"Evocation","classes":"Cleric"}
+{"s":"meld-into-stone","n":"Meld into Stone","lvl":3,"school":"Transmutation","classes":"Cleric, Druid, Ritual Caster"}
+{"s":"nondetection","n":"Nondetection","lvl":3,"school":"Abjuration","classes":"Bard, Cleric, Ranger, Wizard"}
+{"s":"phantom-steed","n":"Phantom Steed","lvl":3,"school":"Illusion","classes":"Ritual Caster, Wizard"}
+{"s":"plant-growth","n":"Plant Growth","lvl":3,"school":"Transmutation","classes":"Bard, Cleric, Druid, Paladin, Ranger, Warlock"}
+{"s":"protection-from-energy","n":"Protection from Energy","lvl":3,"school":"Abjuration","classes":"Cleric, Druid, Paladin, Ranger, Sorcerer, Wizard"}
+{"s":"remove-curse","n":"Remove Curse","lvl":3,"school":"Abjuration","classes":"Cleric, Paladin, Warlock, Wizard"}
+{"s":"revivify","n":"Revivify","lvl":3,"school":"Conjuration","classes":"Cleric, Paladin"}
+{"s":"sending","n":"Sending","lvl":3,"school":"Evocation","classes":"Bard, Cleric, Warlock, Wizard"}
+{"s":"sleet-storm","n":"Sleet Storm","lvl":3,"school":"Conjuration","classes":"Cleric, Druid, Sorcerer, Wizard"}
+{"s":"slow","n":"Slow","lvl":3,"school":"Transmutation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"speak-with-dead","n":"Speak with Dead","lvl":3,"school":"Necromancy","classes":"Bard, Cleric"}
+{"s":"speak-with-plants","n":"Speak with Plants","lvl":3,"school":"Transmutation","classes":"Bard, Druid, Ranger"}
+{"s":"spirit-guardians","n":"Spirit Guardians","lvl":3,"school":"Conjuration","classes":"Cleric"}
+{"s":"stinking-cloud","n":"Stinking Cloud","lvl":3,"school":"Conjuration","classes":"Bard, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"tiny-hut","n":"Tiny Hut","lvl":3,"school":"Evocation","classes":"Bard, Ritual Caster, Wizard"}
+{"s":"tongues","n":"Tongues","lvl":3,"school":"Divination","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"vampiric-touch","n":"Vampiric Touch","lvl":3,"school":"Necromancy","classes":"Warlock, Wizard"}
+{"s":"water-breathing","n":"Water Breathing","lvl":3,"school":"Transmutation","classes":"Druid, Ranger, Ritual Caster, Sorcerer, Wizard"}
+{"s":"water-walk","n":"Water Walk","lvl":3,"school":"Transmutation","classes":"Cleric, Druid, Ranger, Ritual Caster, Sorcerer"}
+{"s":"wind-wall","n":"Wind Wall","lvl":3,"school":"Evocation","classes":"Cleric, Druid, Ranger"}
+{"s":"arcane-eye","n":"Arcane Eye","lvl":4,"school":"Divination","classes":"Cleric, Wizard"}
+{"s":"banishment","n":"Banishment","lvl":4,"school":"Abjuration","classes":"Cleric, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"black-tentacles","n":"Black Tentacles","lvl":4,"school":"Conjuration","classes":"Warlock, Wizard"}
+{"s":"blight","n":"Blight","lvl":4,"school":"Necromancy","classes":"Druid, Sorcerer, Warlock, Wizard"}
+{"s":"compulsion","n":"Compulsion","lvl":4,"school":"Enchantment","classes":"Bard"}
+{"s":"confusion","n":"Confusion","lvl":4,"school":"Enchantment","classes":"Bard, Cleric, Druid, Sorcerer, Wizard"}
+{"s":"conjure-minor-elementals","n":"Conjure Minor Elementals","lvl":4,"school":"Conjuration","classes":"Druid, Wizard"}
+{"s":"conjure-woodland-beings","n":"Conjure Woodland Beings","lvl":4,"school":"Conjuration","classes":"Druid, Ranger"}
+{"s":"control-water","n":"Control Water","lvl":4,"school":"Transmutation","classes":"Cleric, Druid, Wizard"}
+{"s":"death-ward","n":"Death Ward","lvl":4,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"dimension-door","n":"Dimension Door","lvl":4,"school":"Conjuration","classes":"Bard, Cleric, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"divination","n":"Divination","lvl":4,"school":"Divination","classes":"Cleric, Druid, Ritual Caster"}
+{"s":"dominate-beast","n":"Dominate Beast","lvl":4,"school":"Enchantment","classes":"Cleric, Druid, Sorcerer, Warlock"}
+{"s":"fabricate","n":"Fabricate","lvl":4,"school":"Transmutation","classes":"Wizard"}
+{"s":"faithful-hound","n":"Faithful Hound","lvl":4,"school":"Conjuration","classes":"Wizard"}
+{"s":"fire-shield","n":"Fire Shield","lvl":4,"school":"Evocation","classes":"Warlock, Wizard"}
+{"s":"freedom-of-movement","n":"Freedom of Movement","lvl":4,"school":"Abjuration","classes":"Bard, Cleric, Druid, Paladin, Ranger"}
+{"s":"giant-insect","n":"Giant Insect","lvl":4,"school":"Transmutation","classes":"Druid"}
+{"s":"greater-invisibility","n":"Greater Invisibility","lvl":4,"school":"Illusion","classes":"Bard, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"guardian-of-faith","n":"Guardian of Faith","lvl":4,"school":"Conjuration","classes":"Cleric"}
+{"s":"hallucinatory-terrain","n":"Hallucinatory Terrain","lvl":4,"school":"Illusion","classes":"Bard, Druid, Warlock, Wizard"}
+{"s":"ice-storm","n":"Ice Storm","lvl":4,"school":"Evocation","classes":"Cleric, Druid, Paladin, Sorcerer, Wizard"}
+{"s":"locate-creature","n":"Locate Creature","lvl":4,"school":"Divination","classes":"Bard, Cleric, Druid, Paladin, Ranger, Wizard"}
+{"s":"phantasmal-killer","n":"Phantasmal Killer","lvl":4,"school":"Illusion","classes":"Wizard"}
+{"s":"polymorph","n":"Polymorph","lvl":4,"school":"Transmutation","classes":"Bard, Cleric, Druid, Sorcerer, Wizard"}
+{"s":"private-sanctum","n":"Private Sanctum","lvl":4,"school":"Abjuration","classes":"Wizard"}
+{"s":"resilient-sphere","n":"Resilient Sphere","lvl":4,"school":"Evocation","classes":"Wizard"}
+{"s":"secret-chest","n":"Secret Chest","lvl":4,"school":"Conjuration","classes":"Wizard"}
+{"s":"stone-shape","n":"Stone Shape","lvl":4,"school":"Transmutation","classes":"Cleric, Druid, Wizard"}
+{"s":"stoneskin","n":"Stoneskin","lvl":4,"school":"Abjuration","classes":"Cleric, Druid, Paladin, Ranger, Sorcerer, Wizard"}
+{"s":"wall-of-fire","n":"Wall of Fire","lvl":4,"school":"Evocation","classes":"Cleric, Druid, Sorcerer, Warlock, Wizard"}
+{"s":"animate-objects","n":"Animate Objects","lvl":5,"school":"Transmutation","classes":"Bard, Sorcerer, Wizard"}
+{"s":"antilife-shell","n":"Antilife Shell","lvl":5,"school":"Abjuration","classes":"Druid"}
+{"s":"arcane-hand","n":"Arcane Hand","lvl":5,"school":"Evocation","classes":"Wizard"}
+{"s":"awaken","n":"Awaken","lvl":5,"school":"Transmutation","classes":"Bard, Druid"}
+{"s":"cloudkill","n":"Cloudkill","lvl":5,"school":"Conjuration","classes":"Druid, Sorcerer, Wizard"}
+{"s":"commune","n":"Commune","lvl":5,"school":"Divination","classes":"Cleric, Paladin, Ritual Caster"}
+{"s":"commune-with-nature","n":"Commune with Nature","lvl":5,"school":"Divination","classes":"Druid, Paladin, Ranger, Ritual Caster"}
+{"s":"cone-of-cold","n":"Cone of Cold","lvl":5,"school":"Evocation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"conjure-elemental","n":"Conjure Elemental","lvl":5,"school":"Conjuration","classes":"Druid, Wizard"}
+{"s":"contact-other-plane","n":"Contact Other Plane","lvl":5,"school":"Divination","classes":"Ritual Caster, Warlock, Wizard"}
+{"s":"contagion","n":"Contagion","lvl":5,"school":"Necromancy","classes":"Cleric, Druid"}
+{"s":"creation","n":"Creation","lvl":5,"school":"Illusion","classes":"Sorcerer, Wizard"}
+{"s":"dispel-evil-and-good","n":"Dispel Evil and Good","lvl":5,"school":"Abjuration","classes":"Cleric, Paladin"}
+{"s":"dominate-person","n":"Dominate Person","lvl":5,"school":"Enchantment","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"dream","n":"Dream","lvl":5,"school":"Illusion","classes":"Bard, Druid, Warlock, Wizard"}
+{"s":"flame-strike","n":"Flame Strike","lvl":5,"school":"Evocation","classes":"Cleric, Paladin, Warlock"}
+{"s":"geas","n":"Geas","lvl":5,"school":"Enchantment","classes":"Bard, Cleric, Druid, Paladin, Wizard"}
+{"s":"greater-restoration","n":"Greater Restoration","lvl":5,"school":"Abjuration","classes":"Bard, Cleric, Druid"}
+{"s":"hallow","n":"Hallow","lvl":5,"school":"Evocation","classes":"Cleric, Warlock"}
+{"s":"hold-monster","n":"Hold Monster","lvl":5,"school":"Enchantment","classes":"Bard, Cleric, Paladin, Sorcerer, Warlock, Wizard"}
+{"s":"insect-plague","n":"Insect Plague","lvl":5,"school":"Conjuration","classes":"Cleric, Druid, Sorcerer"}
+{"s":"legend-lore","n":"Legend Lore","lvl":5,"school":"Divination","classes":"Bard, Cleric, Wizard"}
+{"s":"mass-cure-wounds","n":"Mass Cure Wounds","lvl":5,"school":"Conjuration","classes":"Bard, Cleric, Druid"}
+{"s":"mislead","n":"Mislead","lvl":5,"school":"Illusion","classes":"Bard, Wizard"}
+{"s":"modify-memory","n":"Modify Memory","lvl":5,"school":"Enchantment","classes":"Bard, Cleric, Wizard"}
+{"s":"passwall","n":"Passwall","lvl":5,"school":"Transmutation","classes":"Druid, Wizard"}
+{"s":"planar-binding","n":"Planar Binding","lvl":5,"school":"Abjuration","classes":"Bard, Cleric, Druid, Wizard"}
+{"s":"raise-dead","n":"Raise Dead","lvl":5,"school":"Necromancy","classes":"Bard, Cleric, Paladin"}
+{"s":"reincarnate","n":"Reincarnate","lvl":5,"school":"Transmutation","classes":"Druid"}
+{"s":"scrying","n":"Scrying","lvl":5,"school":"Divination","classes":"Bard, Cleric, Druid, Paladin, Warlock, Wizard"}
+{"s":"seeming","n":"Seeming","lvl":5,"school":"Illusion","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"telekinesis","n":"Telekinesis","lvl":5,"school":"Transmutation","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"telepathic-bond","n":"Telepathic Bond","lvl":5,"school":"Divination","classes":"Wizard"}
+{"s":"teleportation-circle","n":"Teleportation Circle","lvl":5,"school":"Conjuration","classes":"Bard, Sorcerer, Wizard"}
+{"s":"tree-stride","n":"Tree Stride","lvl":5,"school":"Conjuration","classes":"Cleric, Druid, Paladin, Ranger"}
+{"s":"wall-of-force","n":"Wall of Force","lvl":5,"school":"Evocation","classes":"Wizard"}
+{"s":"wall-of-stone","n":"Wall of Stone","lvl":5,"school":"Evocation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"blade-barrier","n":"Blade Barrier","lvl":6,"school":"Evocation","classes":"Cleric"}
+{"s":"chain-lightning","n":"Chain Lightning","lvl":6,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"circle-of-death","n":"Circle of Death","lvl":6,"school":"Necromancy","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"conjure-fey","n":"Conjure Fey","lvl":6,"school":"Conjuration","classes":"Druid, Warlock"}
+{"s":"contingency","n":"Contingency","lvl":6,"school":"Evocation","classes":"Wizard"}
+{"s":"create-undead","n":"Create Undead","lvl":6,"school":"Necromancy","classes":"Cleric, Warlock, Wizard"}
+{"s":"disintegrate","n":"Disintegrate","lvl":6,"school":"Transmutation","classes":"Sorcerer, Wizard"}
+{"s":"eyebite","n":"Eyebite","lvl":6,"school":"Necromancy","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"find-the-path","n":"Find the Path","lvl":6,"school":"Divination","classes":"Bard, Cleric, Druid"}
+{"s":"flesh-to-stone","n":"Flesh to Stone","lvl":6,"school":"Transmutation","classes":"Warlock, Wizard"}
+{"s":"forbiddance","n":"Forbiddance","lvl":6,"school":"Abjuration","classes":"Cleric, Ritual Caster"}
+{"s":"freezing-sphere","n":"Freezing Sphere","lvl":6,"school":"Evocation","classes":"Wizard"}
+{"s":"globe-of-invulnerability","n":"Globe of Invulnerability","lvl":6,"school":"Abjuration","classes":"Sorcerer, Wizard"}
+{"s":"guards-and-wards","n":"Guards and Wards","lvl":6,"school":"Abjuration","classes":"Bard, Wizard"}
+{"s":"harm","n":"Harm","lvl":6,"school":"Necromancy","classes":"Cleric"}
+{"s":"heal","n":"Heal","lvl":6,"school":"Evocation","classes":"Cleric, Druid"}
+{"s":"heroes-feast","n":"Heroes' Feast","lvl":6,"school":"Conjuration","classes":"Cleric, Druid"}
+{"s":"instant-summons","n":"Instant Summons","lvl":6,"school":"Conjuration","classes":"Ritual Caster, Wizard"}
+{"s":"irresistible-dance","n":"Irresistible Dance","lvl":6,"school":"Enchantment","classes":"Bard, Wizard"}
+{"s":"magic-jar","n":"Magic Jar","lvl":6,"school":"Necromancy","classes":"Wizard"}
+{"s":"mass-suggestion","n":"Mass Suggestion","lvl":6,"school":"Enchantment","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"move-earth","n":"Move Earth","lvl":6,"school":"Transmutation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"planar-ally","n":"Planar Ally","lvl":6,"school":"Conjuration","classes":"Cleric"}
+{"s":"programmed-illusion","n":"Programmed Illusion","lvl":6,"school":"Illusion","classes":"Bard, Wizard"}
+{"s":"sunbeam","n":"Sunbeam","lvl":6,"school":"Evocation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"transport-via-plants","n":"Transport via Plants","lvl":6,"school":"Conjuration","classes":"Druid"}
+{"s":"true-seeing","n":"True Seeing","lvl":6,"school":"Divination","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"wall-of-ice","n":"Wall of Ice","lvl":6,"school":"Evocation","classes":"Wizard"}
+{"s":"wall-of-thorns","n":"Wall of Thorns","lvl":6,"school":"Conjuration","classes":"Druid"}
+{"s":"wind-walk","n":"Wind Walk","lvl":6,"school":"Transmutation","classes":"Druid"}
+{"s":"word-of-recall","n":"Word of Recall","lvl":6,"school":"Conjuration","classes":"Cleric"}
+{"s":"arcane-sword","n":"Arcane Sword","lvl":7,"school":"Evocation","classes":"Bard, Wizard"}
+{"s":"conjure-celestial","n":"Conjure Celestial","lvl":7,"school":"Conjuration","classes":"Cleric"}
+{"s":"delayed-blast-fireball","n":"Delayed Blast Fireball","lvl":7,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"divine-word","n":"Divine Word","lvl":7,"school":"Evocation","classes":"Cleric"}
+{"s":"etherealness","n":"Etherealness","lvl":7,"school":"Transmutation","classes":"Bard, Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"finger-of-death","n":"Finger of Death","lvl":7,"school":"Necromancy","classes":"Sorcerer, Warlock, Wizard"}
+{"s":"fire-storm","n":"Fire Storm","lvl":7,"school":"Evocation","classes":"Cleric, Druid, Sorcerer"}
+{"s":"forcecage","n":"Forcecage","lvl":7,"school":"Evocation","classes":"Bard, Warlock, Wizard"}
+{"s":"magnificent-mansion","n":"Magnificent Mansion","lvl":7,"school":"Conjuration","classes":"Bard, Wizard"}
+{"s":"mirage-arcane","n":"Mirage Arcane","lvl":7,"school":"Illusion","classes":"Bard, Druid, Wizard"}
+{"s":"plane-shift","n":"Plane Shift","lvl":7,"school":"Conjuration","classes":"Cleric, Sorcerer, Warlock, Wizard"}
+{"s":"prismatic-spray","n":"Prismatic Spray","lvl":7,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"project-image","n":"Project Image","lvl":7,"school":"Illusion","classes":"Bard, Wizard"}
+{"s":"regenerate","n":"Regenerate","lvl":7,"school":"Transmutation","classes":"Bard, Cleric, Druid"}
+{"s":"resurrection","n":"Resurrection","lvl":7,"school":"Necromancy","classes":"Bard, Cleric"}
+{"s":"reverse-gravity","n":"Reverse Gravity","lvl":7,"school":"Transmutation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"sequester","n":"Sequester","lvl":7,"school":"Transmutation","classes":"Wizard"}
+{"s":"simulacrum","n":"Simulacrum","lvl":7,"school":"Illusion","classes":"Wizard"}
+{"s":"symbol","n":"Symbol","lvl":7,"school":"Abjuration","classes":"Bard, Cleric, Wizard"}
+{"s":"teleport","n":"Teleport","lvl":7,"school":"Conjuration","classes":"Bard, Sorcerer, Wizard"}
+{"s":"animal-shapes","n":"Animal Shapes","lvl":8,"school":"Transmutation","classes":"Druid"}
+{"s":"antimagic-field","n":"Antimagic Field","lvl":8,"school":"Abjuration","classes":"Cleric, Wizard"}
+{"s":"antipathysympathy","n":"Antipathy/Sympathy","lvl":8,"school":"Enchantment","classes":"Druid, Wizard"}
+{"s":"clone","n":"Clone","lvl":8,"school":"Necromancy","classes":"Wizard"}
+{"s":"control-weather","n":"Control Weather","lvl":8,"school":"Transmutation","classes":"Cleric, Druid, Wizard"}
+{"s":"demiplane","n":"Demiplane","lvl":8,"school":"Conjuration","classes":"Warlock, Wizard"}
+{"s":"dominate-monster","n":"Dominate Monster","lvl":8,"school":"Enchantment","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"earthquake","n":"Earthquake","lvl":8,"school":"Evocation","classes":"Cleric, Druid, Sorcerer"}
+{"s":"feeblemind","n":"Feeblemind","lvl":8,"school":"Enchantment","classes":"Bard, Druid, Warlock, Wizard"}
+{"s":"glibness","n":"Glibness","lvl":8,"school":"Transmutation","classes":"Bard, Warlock"}
+{"s":"holy-aura","n":"Holy Aura","lvl":8,"school":"Abjuration","classes":"Cleric"}
+{"s":"incendiary-cloud","n":"Incendiary Cloud","lvl":8,"school":"Conjuration","classes":"Sorcerer, Wizard"}
+{"s":"maze","n":"Maze","lvl":8,"school":"Conjuration","classes":"Wizard"}
+{"s":"mind-blank","n":"Mind Blank","lvl":8,"school":"Abjuration","classes":"Bard, Wizard"}
+{"s":"power-word-stun","n":"Power Word Stun","lvl":8,"school":"Enchantment","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"sunburst","n":"Sunburst","lvl":8,"school":"Evocation","classes":"Druid, Sorcerer, Wizard"}
+{"s":"astral-projection","n":"Astral Projection","lvl":9,"school":"Necromancy","classes":"Cleric, Warlock, Wizard"}
+{"s":"foresight","n":"Foresight","lvl":9,"school":"Divination","classes":"Bard, Druid, Warlock, Wizard"}
+{"s":"gate","n":"Gate","lvl":9,"school":"Conjuration","classes":"Cleric, Sorcerer, Wizard"}
+{"s":"imprisonment","n":"Imprisonment","lvl":9,"school":"Abjuration","classes":"Warlock, Wizard"}
+{"s":"mass-heal","n":"Mass Heal","lvl":9,"school":"Conjuration","classes":"Cleric"}
+{"s":"meteor-swarm","n":"Meteor Swarm","lvl":9,"school":"Evocation","classes":"Sorcerer, Wizard"}
+{"s":"power-word-kill","n":"Power Word Kill","lvl":9,"school":"Enchantment","classes":"Bard, Sorcerer, Warlock, Wizard"}
+{"s":"prismatic-wall","n":"Prismatic Wall","lvl":9,"school":"Abjuration","classes":"Wizard"}
+{"s":"shapechange","n":"Shapechange","lvl":9,"school":"Transmutation","classes":"Druid, Wizard"}
+{"s":"storm-of-vengeance","n":"Storm of Vengeance","lvl":9,"school":"Conjuration","classes":"Druid"}
+{"s":"time-stop","n":"Time Stop","lvl":9,"school":"Transmutation","classes":"Sorcerer, Wizard"}
+{"s":"true-polymorph","n":"True Polymorph","lvl":9,"school":"Transmutation","classes":"Bard, Warlock, Wizard"}
+{"s":"true-resurrection","n":"True Resurrection","lvl":9,"school":"Necromancy","classes":"Cleric, Druid"}
+{"s":"weird","n":"Weird","lvl":9,"school":"Illusion","classes":"Wizard"}
+{"s":"wish","n":"Wish","lvl":9,"school":"Conjuration","classes":"Sorcerer, Wizard"}

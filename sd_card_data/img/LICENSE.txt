@@ -1,0 +1,5 @@
+Illustrations in this folder originate from the open5e project
+(https://github.com/open5e/open5e-api, static/img/object_illustrations)
+and are licensed Creative Commons Attribution-NonCommercial 4.0
+International (CC BY-NC 4.0). Attribution: open5e (open5e.com).
+Non-commercial use only. See https://creativecommons.org/licenses/by-nc/4.0/
